@@ -1,0 +1,24 @@
+{
+	"container":"index main page",
+
+	"foot-nav":"footer navigator menu",
+
+	"main":"index page main part but navigator menu",
+
+	"index-lists":"all lists in index",
+
+	"side-nav":"navigator in main",
+
+	"artLists":"all lists menus in side-nav",
+
+	"menuList":"button to show or not show?? in menu",
+
+	"show-win":"all lists in main to show",
+
+	"win-lists":"all lists in win",
+
+	"nav":"main in footer navigator",
+
+	"show-menu":"button to show or not show ???"
+
+}

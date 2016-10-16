@@ -1,0 +1,206 @@
+@import url(reset.css);
+
+
+/*body html*/
+
+body,html{
+	width: 100%;
+	height: 100%;
+}
+
+/*index  container*/
+
+#container{
+	width: 100%;
+	height: 100%;
+	position: relative;
+	background: url(../Fpics/MyStart_57c7368dae2e97e12a5cf632.jpeg);
+
+	overflow: hidden;
+}
+
+
+/*container 中的lists的排列 采用随机布局,然后采用布局转换*/
+
+#container .index-lists{
+	width: 100%;
+	height: 94%;
+	background: rgba(95,171,222,.65);
+
+	background: transparent;
+
+	position: relative;
+}
+
+
+#container>ul.index-lists li{
+	
+	border-sizing:border-box;
+
+	width: 80px;
+	height: 80px;
+	background: black;
+
+	color: #fff;
+
+	float: left;
+
+	margin: 60px;
+}
+
+#container>ul.index-lists li[name="active"]{
+	border: 1px dashed #ccc;
+}
+
+
+
+/*main */
+
+#container .main{
+	width: 100%;
+	height: 94%;
+	background: rgba(41,122,204,.2);
+	position: relative;
+
+	opacity: 0;
+
+	display: none;
+}
+
+#container .main .side-nav{
+	width: 320px;
+	height: 100%;
+	background: transparent;
+	position: absolute;
+	left: -256px;
+}
+
+
+.side-nav .artLists{
+	width: 256px;
+	height: 100%;
+	position: absolute;
+	left: 0;
+	background: rgba(7,41,76,.85);
+}
+
+/*lists*/
+
+.side-nav .artLists .side-lists{
+	width: 100%;
+	height: 100%;
+}
+
+
+/*side中的list的排列*/
+.artLists ul.side-lists li{
+	width: 90%;
+	height: 50px;
+	margin: 10px auto 0 auto;
+	background: green;
+
+	color: #fff;
+	font-size: 25px;
+	font-weight: bolder;
+
+	text-align: center;
+	line-height: 50px;
+
+	cursor:pointer;
+}
+
+.side-nav .menuList{
+	width: 64px;
+	height: 100%;
+	position: absolute;
+	left: 256px;
+	background: rgb(0,0,0);
+}
+
+
+/*main 中显示的子元素*/
+
+#container .main .show-win{
+	width: 96%;
+	height: 100%;
+	background: red;
+	position: absolute;
+	left: 64px;
+}
+
+#container .main .show-win .win-lists{
+	width: 100%;
+	height: 100%;
+}
+
+.main .show-win .win-lists li{
+	width: 100px;
+	height: 100px;
+	background: #fff;
+	float: left;
+	margin: 30px;
+
+	color: #000;
+}
+
+
+
+/*footer navigator*/
+
+#container .foot-nav{
+	width: 100%;
+	height: 6%;
+	background: rgba(7,41,76,.85);
+	position: absolute;
+	bottom: 0;
+
+	clear: both;
+}
+
+.foot-nav .nav{
+	width: 100%;
+	height: 100%;
+}
+
+.foot-nav>ul li{
+	height: 100%;
+	background: #ACADDB;
+	width: 45px;
+
+
+	display: inline-block;
+
+
+	cursor: pointer;
+
+}
+
+
+/*iframe need to show in field*/
+
+#container .containerWins{
+
+	width: 100%;
+	height: 94%;
+
+	background: rgba(232,16,16,.5);
+	position: absolute;
+
+	z-index: 5;
+
+	left: 0;
+	top: 0;
+
+	display: none;
+}
+
+#container .containerWins iframe{
+	width: 80%;
+	height: 80%;
+
+	border: 1px solid black;
+
+	margin: 50px 10% 0 10%;
+
+
+}
