@@ -127,8 +127,49 @@
 
 		//封装一个css函数自动赋值取值
 
-		css:function(){
-			return;
+		css:function(obj,attr,value){  //获取或者设置css属性
+
+            /*
+             Document.defaultView
+             概要:
+             在浏览器中返回关联document的window对象，如果没有则返回null
+             用法:
+             var win = document.defaultView;
+             这是一个只读属性。
+             */
+
+            if(arguments.length==2)
+                return parseFloat(obj.currentStyle?obj.currentStyle[attr]:document.defaultView.getComputedStyle(obj, false)[attr]);
+            else if(arguments.length==3){
+                switch(attr)
+                {
+                    case 'width':
+                    case 'height':
+                    case 'paddingLeft':
+                    case 'paddingTop':
+                    case 'paddingRight':
+                    case 'paddingBottom':
+                        value=Math.max(value,0);
+                    case 'left':
+                    case 'top':
+                    case 'marginLeft':
+                    case 'marginTop':
+                    case 'marginRight':
+                    case 'marginBottom':
+                        obj.style[attr]=value+'px';
+                        break;
+                    case 'opacity':
+                        obj.style.filter="alpha(opacity:"+value*100+")";
+                        obj.style.opacity=value;
+                        break;
+                    default:
+                        obj.style[attr]=value;
+                }
+            }
+
+
+            //return function (attr_in, value_in){css(obj, attr_in, value_in)};
+            //这个方法是将自己包含参数并且返回
 		},
 
 		//封装一个可以拖动的
@@ -180,15 +221,26 @@
 
 					//创建虚框
 					var createDiv=document.createElement("div");
-					createDiv.style.width=__this.offsetWidth+"px";
-					createDiv.style.height=__this.offsetHeight+"px";
-					createDiv.style.position="absolute";
-					createDiv.style.left=__this.offsetLeft+"px";
-					createDiv.style.top=__this.offsetTop+"px";
+					with(createDiv){	//改用with
+						style.width=__this.offsetWidth+"px";
+						style.height=__this.offsetHeight+"px";
+						style.position="absolute";
+						style.left=__this.offsetLeft+"px";
+						style.top=__this.offsetTop+"px";
+						
+						style.background="transparent";
+						style.boxSizing="border-box";
+						style.border="1px dashed #fff";
+					}
+					// createDiv.style.width=__this.offsetWidth+"px";
+					// createDiv.style.height=__this.offsetHeight+"px";
+					// createDiv.style.position="absolute";
+					// createDiv.style.left=__this.offsetLeft+"px";
+					// createDiv.style.top=__this.offsetTop+"px";
 					
-					createDiv.style.background="transparent";
-					createDiv.style.boxSizing="border-box";
-					createDiv.style.border="1px dashed #fff";
+					// createDiv.style.background="transparent";
+					// createDiv.style.boxSizing="border-box";
+					// createDiv.style.border="1px dashed #fff";
 
 					parent.appendChild(createDiv);
 
@@ -237,9 +289,9 @@
 						}
 
 						//先将所有的name清空
-						for(var j=0;j<dragLis.length;j++){
-							if(dragLis[j].getAttribute("name")){
-								dragLis[j].removeAttribute("name");
+						for(var k=0;k<dragLis.length;k++){
+							if(dragLis[k].getAttribute("name")){
+								dragLis[k].removeAttribute("name");
 							}
 						}
 

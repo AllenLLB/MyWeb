@@ -137,18 +137,18 @@
 
 			if(!args.openFlag){
 
-				args.oMain.style.display="block";
+				libo.css(args.oMain,"display","block");
 				libo.startMove(args.oMain,{opacity:80},30,function(){
-					args.indexLists.style.display="none";
+					libo.css(args.indexLists,"display","none");
 				});
 
 				args.showFlag=false;
 
 			}else{
-				args.oMain.style.display="block";
+				libo.css(args.oMain,"display","block");
 				libo.startMove(args.oMain,{opacity:80},30,function(){
-					args.indexLists.style.display="none";
-					args.mainWin.style.display="none";
+					libo.css(args.indexLists,"display","none");
+					libo.css(args.mainWin,"display","none");
 				});
 
 				args.showFlag=false;
@@ -159,16 +159,17 @@
 			if(!args.openFlag){
 				args.indexLists.style.display="block";  
 				libo.startMove(args.oMain,{opacity:0},30,function(){
-					args.oMain.style.display="none";
+					libo.css(args.oMain,"display","none");
 					// mainWin.style.display="block"; //暂时不用这个
 				});
 
 				args.showFlag=true;
 			}else{
-				// indexLists.style.display="block";
+
 				libo.startMove(args.oMain,{opacity:0},30,function(){
-					args.oMain.style.display="none";
-					args.mainWin.style.display="block";
+
+					libo.css(args.oMain,"display","none");
+					libo.css(args.mainWin,"display","block");
 				});
 
 				args.showFlag=true;
@@ -235,8 +236,10 @@
 		for(var i=0;i<args.ListsBtns.length;i++){
 			args.ListsBtns[i].index=i;
 			args.ListsBtns[i].ondblclick=function(){
-				args.indexLists.style.display="none";
-				args.mainWin.style.display="block";
+				// args.indexLists.style.display="none";
+				// args.mainWin.style.display="block";
+				libo.css(args.indexLists,"display","none");
+				libo.css(args.mainWin,"display","block");
 				args.Tiframe.src=this.getAttribute("data-url");	
 
 				args.openFlag=true;
