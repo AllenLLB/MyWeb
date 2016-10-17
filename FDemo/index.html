@@ -73,113 +73,118 @@
 
 <script type="text/javascript">
 
+    //先使用构造函数构造库对象
+    var libo=new Libo();
 
+    //这些变量的定义都用自执行函数,然后给window注册
+    (function(){
 
-	//先使用构造函数构造库对象
-	var libo=new Libo();
-	//click show menu
-	var oBtn=libo.getByClass("show-menu")[0];
+        var args={};
+        //click show menu
+        args.oBtn=libo.getByClass("show-menu")[0];
 
-	//foot nav
-	var footNav=libo.getByClass("foot-nav")[0];
+        //foot nav
+        args.footNav=libo.getByClass("foot-nav")[0];
 
-	//menu
-	var oMain=libo.getByClass("main")[0];
+        //menu
+        args.oMain=libo.getByClass("main")[0];
 
-	//side nav
-	var sideNav=libo.getByClass("side-nav")[0];
-	var artLists=libo.getByClass("artLists")[0];
-	var menuList=libo.getByClass("menuList")[0];
-	var oBtnList=libo.getByClass("btn-menu")[0];
+        //side nav
+        args.sideNav=libo.getByClass("side-nav")[0];
+        args.artLists=libo.getByClass("artLists")[0];
+        args.menuList=libo.getByClass("menuList")[0];
+        args.oBtnList=libo.getByClass("btn-menu")[0];
 
+        //window iframe
 
+        args.showWin=libo.getByClass("show-win")[0];
 
-	//window iframe
+        //index lists
 
-	var showWin=libo.getByClass("show-win")[0];
+        args.indexLists=libo.getByClass("index-lists")[0];
+        args.aIndexLists=args.indexLists.getElementsByTagName("li");
 
-	//index lists
+        //all li to iframe
+        args.mainWin=libo.getByClass("containerWins")[0];
+        args.ListsBtns=libo.getByClass("toIframe");
+   
 
-	var indexLists=libo.getByClass("index-lists")[0];
-	var aIndexLists=indexLists.getElementsByTagName("li");
+        args.Tiframe=document.querySelector("iframe");
 
-	//all li to iframe
-	var mainWin=libo.getByClass("containerWins")[0];
-	var ListsBtns=libo.getByClass("toIframe");
+        //这个标志表示有没有案例被打开
 
-	var Tiframe=document.querySelector("iframe");
+        args.openFlag=false;
 
+        //show?
+        args.showFlag=true;
 
-	//这个标志表示有没有案例被打开
+        //show menu
+        args.show=false;
+        
 
-	var openFlag=false;
+        //给window注册
+        window["args"]=args;
+        
+    }());
 
-
-	oBtn.onclick=showOrCloswAllList;
-	oBtnList.onclick=showOrClosMenu;
-
-	//show? 
-
-	var showFlag=true;
-	//show menu
-	var show=false;
-
+    args.oBtn.onclick=showOrCloswAllList;
+    args.oBtnList.onclick=showOrClosMenu;
 	//show??or??close
 
 	function showOrCloswAllList(){
 
-		if (showFlag) {
+		if (args.showFlag) {
 
-			if(!openFlag){
+			if(!args.openFlag){
 
-				oMain.style.display="block";
-				libo.startMove(oMain,{opacity:80},30,function(){
-					indexLists.style.display="none";
+				args.oMain.style.display="block";
+				libo.startMove(args.oMain,{opacity:80},30,function(){
+					args.indexLists.style.display="none";
 				});
 
-				showFlag=false;
+				args.showFlag=false;
 
 			}else{
-				oMain.style.display="block";
-				libo.startMove(oMain,{opacity:80},30,function(){
-					indexLists.style.display="none";
-					mainWin.style.display="none";
+				args.oMain.style.display="block";
+				libo.startMove(args.oMain,{opacity:80},30,function(){
+					args.indexLists.style.display="none";
+					args.mainWin.style.display="none";
 				});
 
-				showFlag=false;
+				args.showFlag=false;
 
 			}
 		}else{
 
-			if(!openFlag){
-				indexLists.style.display="block";  
-				libo.startMove(oMain,{opacity:0},30,function(){
-					oMain.style.display="none";
+			if(!args.openFlag){
+				args.indexLists.style.display="block";  
+				libo.startMove(args.oMain,{opacity:0},30,function(){
+					args.oMain.style.display="none";
 					// mainWin.style.display="block"; //暂时不用这个
 				});
 
-				showFlag=true;
+				args.showFlag=true;
 			}else{
 				// indexLists.style.display="block";
-				libo.startMove(oMain,{opacity:0},30,function(){
-					oMain.style.display="none";
-					mainWin.style.display="block";
+				libo.startMove(args.oMain,{opacity:0},30,function(){
+					args.oMain.style.display="none";
+					args.mainWin.style.display="block";
 				});
 
-				showFlag=true;
+				args.showFlag=true;
 			}
 
 			
 		}
 
 		//同时检测menu
-		if(show){
-			var changeWidth=artLists.offsetWidth;
-			libo.startMove(sideNav,{left:sideNav.offsetLeft-changeWidth},30,function(){
-				oBtnList.innerHTML="menu";
+		if(args.show){
+			var changeWidth=args.artLists.offsetWidth;
+			libo.startMove(sideNav,{left:args.sideNav.offsetLeft-changeWidth},30,function(){
+				args.oBtnList.innerHTML="menu";
 			});
-			libo.startMove(showWin,{left:showWin.offsetLeft-changeWidth},30);
-			show=false;
+			libo.startMove(args.showWin,{left:args.showWin.offsetLeft-changeWidth},30);
+			args.show=false;
 		}
 	}
 
@@ -187,57 +192,57 @@
 
 	function showOrClosMenu(){
 		
-		var changeWidth=artLists.offsetWidth;
+		var changeWidth=args.artLists.offsetWidth;
 
-		if(!show){
-			libo.startMove(sideNav,{left:sideNav.offsetLeft+changeWidth},30,function(){
-				oBtnList.innerHTML="back";
+		if(!args.show){
+			libo.startMove(args.sideNav,{left:args.sideNav.offsetLeft+changeWidth},30,function(){
+				args.oBtnList.innerHTML="back";
 			});
-			libo.startMove(showWin,{left:showWin.offsetLeft+changeWidth},30);
-			show=true;
+			libo.startMove(args.showWin,{left:args.showWin.offsetLeft+changeWidth},30);
+			args.show=true;
 			
 			
 		}else{
-			libo.startMove(sideNav,{left:sideNav.offsetLeft-changeWidth},30,function(){
-				oBtnList.innerHTML="menu";
+			libo.startMove(args.sideNav,{left:args.sideNav.offsetLeft-changeWidth},30,function(){
+				args.oBtnList.innerHTML="menu";
 			});
-			libo.startMove(showWin,{left:showWin.offsetLeft-changeWidth},30);
-			show=false;
+			libo.startMove(args.showWin,{left:args.showWin.offsetLeft-changeWidth},30);
+			args.show=false;
 			
 		}
 		
 	}
 
-	//给index的lists进行布局转换
+	//给index的lists进行布局转换(都自执行闭包函数)
 
 	(function changeIndexLists(){
-		for(var i=0;i<aIndexLists.length;i++){
-			aIndexLists[i].style.left=aIndexLists[i].offsetLeft+"px";
-			aIndexLists[i].style.top=aIndexLists[i].offsetTop+"px";
+		for(var i=0;i<args.aIndexLists.length;i++){
+			args.aIndexLists[i].style.left=args.aIndexLists[i].offsetLeft+"px";
+			args.aIndexLists[i].style.top=args.aIndexLists[i].offsetTop+"px";
 		}
-		for(var i=0;i<aIndexLists.length;i++){
-			aIndexLists[i].style.position="absolute";
-			aIndexLists[i].style.margin="0";
+		for(var j=0;j<args.aIndexLists.length;j++){
+			args.aIndexLists[j].style.position="absolute";
+			args.aIndexLists[j].style.margin="0";
 		}
 	}());
 
 
 	//给index的lists添加拖动事件
-	libo.drag(indexLists,aIndexLists);
+	libo.drag(args.indexLists,args.aIndexLists);
 
 	//自执行函数给所有的lists iframe 添加双击事件
 	(function(){
-		for(var i=0;i<ListsBtns.length;i++){
-			ListsBtns[i].index=i;
-			ListsBtns[i].ondblclick=function(){
-				indexLists.style.display="none";
-				mainWin.style.display="block";
-				Tiframe.src=this.getAttribute("data-url");	
+		for(var i=0;i<args.ListsBtns.length;i++){
+			args.ListsBtns[i].index=i;
+			args.ListsBtns[i].ondblclick=function(){
+				args.indexLists.style.display="none";
+				args.mainWin.style.display="block";
+				args.Tiframe.src=this.getAttribute("data-url");	
 
-				openFlag=true;
+				args.openFlag=true;
 
 				//检测原始菜单是否展开
-				if(!showFlag){
+				if(!args.showFlag){
 					showOrCloswAllList();
 				}
 			}
