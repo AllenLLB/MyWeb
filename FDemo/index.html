@@ -13,7 +13,7 @@
 			<div class="side-nav">
 				<div class="artLists">
 					<ul class="side-lists">
-						<li class="li1 toIframe" data-url="general.html">today</li>
+						<li class="li1 toIframe" data-url="../ProjectLists/拼图/index.html">拼图</li>
 						<li class="li2 toIframe" data-url="general.html">shaidhu</li>
 						<li class="li3 toIframe" data-url="general.html">shdha</li>
 						<li class="li4 toIframe" data-url="general.html">jhdahd</li>
@@ -31,7 +31,7 @@
 			</div>
 			<div class="show-win">
 				<ul class="win-lists">
-					<li class="li1 toIframe" data-url="general.html">today</li>
+					<li class="li1 toIframe" data-url="../ProjectLists/拼图/index.html">拼图</li>
 					<li class="li2 toIframe" data-url="general.html">shaidhu</li>
 					<li class="li3 toIframe" data-url="general.html">shdha</li>
 					<li class="li4 toIframe" data-url="general.html">jhdahd</li>
@@ -43,7 +43,7 @@
 			</div>
 		</div>
 		<ul class="index-lists">
-			<li class="drag li1 toIframe" data-url="general.html">11today</li>
+			<li class="drag li1 toIframe puzzle" data-url="../ProjectLists/拼图/index.html">拼图</li>
 			<li class="drag li2 toIframe" data-url="general.html">22shaidhu</li>
 			<li class="drag li3 toIframe" data-url="general.html">33shdha</li>
 			<li class="drag li4 toIframe" data-url="general.html">jhdahd</li>
@@ -59,7 +59,7 @@
 			</ul>
 		</div>
 		<div class="containerWins">
-			<iframe   name="containerWins" src="general.html"></iframe>
+			<iframe   name="containerWins" src=""></iframe>
 		</div>
 
 
@@ -181,7 +181,7 @@
 		//同时检测menu
 		if(args.show){
 			var changeWidth=args.artLists.offsetWidth;
-			libo.startMove(sideNav,{left:args.sideNav.offsetLeft-changeWidth},30,function(){
+			libo.startMove(args.sideNav,{left:args.sideNav.offsetLeft-changeWidth},30,function(){
 				args.oBtnList.innerHTML="menu";
 			});
 			libo.startMove(args.showWin,{left:args.showWin.offsetLeft-changeWidth},30);
