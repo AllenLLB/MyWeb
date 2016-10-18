@@ -1,0 +1,238 @@
+@import url(../../Fcss/reset.css);
+
+/*设置整体框架*/
+/*按照网易云音乐的实际来(有限制的最大最小值)*/
+
+html,body{
+	width: 100%;
+	height: 100%;
+}
+
+#container{
+	min-width: 1010px;
+	min-height: 671px;
+
+	width: 1010px;
+	height: 671px;
+
+	margin: 0 auto 0 auto;
+
+	box-sizing: border-box;
+
+}
+
+
+/*head 部分*/
+
+#container .head_nav{
+	width: 100%;
+	height: 50px;
+	background: #A07171;
+
+	position: relative;
+}
+
+/*左边的logo*/
+#container .head_nav .logo{		/*此处不加浮动会影响下面的布局???*/
+	display: block;
+	width: 170px;
+	height: 100%;
+	background: #ccc;
+
+	position: absolute;
+
+	left: 0;
+}
+
+/*中间的搜索*/
+
+#container .head_nav .search{
+	width: 250px;
+	height: 100%;
+	background: pink;
+
+	position: absolute;
+	left: 230px;
+}
+/*右边的一系列操作*/
+#container .head_nav .action{
+	width: 380px;
+	height: 100%;
+	background: #ccc;
+
+	position: absolute;
+	right: 0;
+}
+
+#container .head_nav .action .action_style{
+	width: 60%;
+	height: 100%;
+	background: rgba(254,54,54,.5);
+
+	float: left;
+}
+
+#container .head_nav .action .action_status{
+	width: 30%;
+	height: 100%;
+	background: rgba(254,54,54,.5);
+
+	float: right;
+}
+
+/*主体部分*/
+
+#container .main{
+	width: 100%;
+	height: 570px;
+	min-height: 570px;
+
+	background: #E56A5A;
+
+	clear: both;
+}
+
+/*主体左边的目录部分*/
+
+
+#container .main .left_nav{
+	width: 200px;
+	height: 100%;
+
+	float: left;
+	background: transparent;
+
+	position: relative;
+}
+
+
+/*左边的第一个自定义菜单*/
+
+#container .main .left_nav dl.suggest{
+	width: 100%;
+	height: 160px;
+
+	background: #eee;
+}
+
+.left_nav dl.suggest dt{
+	width: 100%;
+	height: 30px;
+	line-height: 30px;
+
+	font-size: 14px;
+	text-indent: 10px;
+}
+
+.left_nav dl.suggest dd{
+	box-sizing: border-box;
+	width: 100%;
+	height: 30px;
+
+	line-height: 30px;
+
+	text-indent: 55px;
+	font-size: 13px;
+}
+
+/*左边的第二个自定义菜单*/
+
+#container .main .left_nav dl.mine{
+	width: 100%;
+	height: 160px;
+	background: transparent;
+}
+
+.left_nav dl.mine dt{
+	width: 100%;
+	height: 30px;
+	line-height: 30px;
+
+	font-size: 14px;
+	text-indent: 10px;
+}
+
+.left_nav dl.mine dd{
+	box-sizing: border-box;
+	width: 100%;
+	height: 30px;
+
+	line-height: 30px;
+	text-indent: 55px;
+
+	font-size: 13px;
+}
+
+/*左边的第三个自定义菜单*/
+#container .main .left_nav dl.song_list{
+	width: 100%;
+	height: 70px;
+
+	background: #A07171;
+
+}
+
+.left_nav dl.song_list dt{
+	width: 100%;
+	height: 30px;
+	line-height: 30px;
+
+	font-size: 14px;
+	text-indent: 10px;
+}
+
+.left_nav dl.song_list dd{
+	box-sizing: border-box;
+	width: 100%;
+	height: 30px;
+
+	line-height: 30px;
+	text-indent: 55px;
+
+	font-size: 13px;
+}
+/*设置所有的dd*/
+
+.left_nav dd:hover{
+	background: transparent;
+}
+
+
+
+/*左边的第二个自定义菜单*/
+
+
+/*左下角的播放的部分*/
+#container .main .left_nav .now_play{
+	width: 100%;
+	height: 60px;
+
+	position: absolute;
+
+	bottom: 0;
+
+	background: #ccc;
+}
+
+/*主体右边的内容部分*/
+#container .main .right_content{
+	width: 200px;
+	height: 100%;
+		
+	min-width: 810px;	
+
+	float: left;
+	background: green;
+}
+
+
+
+/*底部音乐播放部分*/
+
+#container .footer_nav{
+	width: 100%;
+	height: 50px;
+	min-height: 50px;
+
+	background: #E56AFF;
+}

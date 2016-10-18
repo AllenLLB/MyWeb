@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>changePic Game</title>
+    <link rel="stylesheet" href="index.css" type="text/css" />
+</head>
+<body>
+    <ul id="actionMenu">
+        <li class="small">最小化</li>
+        <li class="big">最大化</li>
+        <li class="close">关闭</li>
+    </ul>
+    <ul id="container">
+        <li class="all li1"><img name="img" src="" width="137" height="137"/></li>
+        <li class="all li2"><img name="img" src="" width="137" height="137"/></li>
+        <li class="all li3"><img name="img" src="" width="137" height="137"/></li>
+        <li class="all li4"><img name="img" src="" width="137" height="137"/></li>
+        <li class="all li5"><img name="img" src="" width="137" height="137"/></li>
+        <li class="all li6"><img name="img" src="" width="137" height="137"/></li>
+        <li class="all li7"><img name="img" src="" width="137" height="137"/></li>
+        <li class="all li8"><img name="img" src="" width="137" height="137"/></li>
+        <li class="all li9"><img name="img" src="" width="137" height="137" alt="empty"/></li>
+    </ul>
+    <div id="BigPic">
+        <img src="imgs/big.jpg" width="411" height="411" >
+    </div>
+    <div id="redMe">
+        游戏规则：右下角的图片被换成了空的，拼好其余的她就来了。通过键盘控制小块移动的方向，最终移动至左边图片就算是游戏成功完成!（你也可以通过点击旁边的按钮来移动图片）
+        <p class="success">恭喜通关</p>
+    </div>
+    <div id="button">
+        <button class="bt1" name="up">下</button>
+        <button class="bt2" name="down">上</button>
+        <button class="bt3" name="left">右</button>
+        <button class="bt4" name="right">左</button>
+    </div>
+</body>
+<script type="text/javascript" src="tool.js"></script>
+<script type="text/javascript" src="index.js"></script>
+<script type="text/javascript">
+    var oClose=document.querySelector("li[class='close']");
+    oClose.onclick=function(){
+        window.parent.libo.css(window.parent.args.mainWin,"display","none");
+        window.parent.libo.css(window.parent.args.indexLists,"display","block");
+        window.parent.args.openFlag=false;
+    }
+</script>
+</html>
