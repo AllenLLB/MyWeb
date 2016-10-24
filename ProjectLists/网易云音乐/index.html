@@ -53,10 +53,16 @@
 			</div>
 			<div class="right_content">
 				<ul class="right_con">
-					<li></li>
-					<li></li>
-					<li></li>
-					<li></li>
+					<li class="suggestDay day1">
+						<ul class="findMusic_nav"></ul>
+						<div class="carousel"></div>
+						<div class="arts"></div>
+					</li>
+					<li class="suggestDay day2 noShow"></li>
+					<li class="suggestDay day3 noShow"></li>
+					<li class="suggestDay day4 noShow"></li>
+					<li class="canvasAnimate noShow"></li>
+					<li class="lovePart noShow"></li>
 				</ul>
 			</div>
 		</div>
@@ -76,6 +82,7 @@
 	    		window.parent.libo.css(window.parent.args.mainWin,"display","none");
 	    		window.parent.libo.css(window.parent.args.canCon,"display","block");
 	    		window.parent.libo.css(window.parent.args.indexLists,"display","block");
+	    		window.parent.args.Tiframe.src="";
 	    		//在chrome上的显示有问题
 	    		window.parent.args.openFlag=false;
 	    	}

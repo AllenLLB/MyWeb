@@ -326,6 +326,67 @@ html,body{
 	background: green;
 }
 
+#container .main .right_content .right_con{
+	width: 810px;
+	height: 100%;	
+
+	overflow: hidden;
+}
+
+
+.main .right_content>.right_con li{
+	width: 810px;
+	height: 100%;	
+}
+
+/*对每一个作为选项卡的li进行单独的设计*/
+
+/*li1*/
+.main .right_content>.right_con li.day1{
+		background: blue;
+}
+.right_con li.day1>.findMusic_nav{
+
+}
+.right_con li.day1>.carousel{
+
+}
+.right_con li.day1>.arts{
+
+}
+
+/*2*/
+.main .right_content>.right_con li.day2{
+		background: red;
+}
+
+/*3*/
+.main .right_content>.right_con li.day3{
+		background: yellow;
+}
+
+/*4*/
+.main .right_content>.right_con li.day4{
+		background: #ccc;
+}
+
+/*5*/
+.main .right_content>.right_con li.canvasAnimate{
+		background: black;
+}
+
+
+/*6*/
+
+.main .right_content>.right_con li.lovePart{
+		background: #ccc;
+}
+
+
+.main .right_content>.right_con li.noShow{
+	display: none;
+}
+
 
 
 /*底部音乐播放部分*/

@@ -98,55 +98,55 @@
     (function(){
 
         var args={};
-        //click show menu
-        args.oBtn=libo.getByClass("show-menu")[0];
 
-        //container
-
+        //此页面的总结构,类似于body
         args.container=document.getElementById("container");
 
-        //foot nav
+        //五大金刚之一的底部部分
         args.footNav=libo.getByClass("foot-nav")[0];
 
-        //menu
-        args.oMain=libo.getByClass("main")[0];
-
-        //side nav
-        args.sideNav=libo.getByClass("side-nav")[0];
-        args.artLists=libo.getByClass("artLists")[0];
-        args.menuList=libo.getByClass("menuList")[0];
-        args.oBtnList=libo.getByClass("btn-menu")[0];
-
-        //canvas  container
-
-        args.canCon=document.getElementById("canvas");
-        args.can=libo.getByClass("clock")[0];
-
-        //window iframe
-
-        args.showWin=libo.getByClass("show-win")[0];
-        args.winLists=libo.getByClass("win-lists")[0];
-
-        //index lists
-
+        //五大金刚之一的应用的容器,以及所有的应用
         args.indexLists=libo.getByClass("index-lists")[0];
         args.aIndexLists=args.indexLists.getElementsByTagName("li");
 
-        //all li to iframe
-        args.mainWin=libo.getByClass("containerWins")[0];
-        args.ListsBtns=libo.getByClass("toIframe");
-   
+        //五大金刚之一的总菜单打开是显示的菜单
+        args.oMain=libo.getByClass("main")[0];
 
+        //五大金刚之一的canvas容器以及canvas
+        args.canCon=document.getElementById("canvas");
+        args.can=libo.getByClass("clock")[0];
+
+        //五大金刚之一的桌面上用来显示打开的应用的部分以及显示的框架
+        args.mainWin=libo.getByClass("containerWins")[0];
         args.Tiframe=document.querySelector("iframe");
 
-        //这个标志表示有没有案例被打开
+        //五大金刚之一的底部用来打开显示总菜单的总开关
+        args.oBtn=libo.getByClass("show-menu")[0];
+        
+        //一下都是在总菜单里面显示的
+        //总菜单中的左侧栏的一系列
+        args.sideNav=libo.getByClass("side-nav")[0];
+        args.artLists=libo.getByClass("artLists")[0];
+        args.menuList=libo.getByClass("menuList")[0];
+        //总菜单中的左侧栏中用来表示显示还是隐藏的按钮
+        args.oBtnList=libo.getByClass("btn-menu")[0];
 
+        //总菜单中的右侧栏的主体部分容器以及总体部分
+        args.showWin=libo.getByClass("show-win")[0];
+        args.winLists=libo.getByClass("win-lists")[0];
+
+       	//所有的打开应用的开关由三部分组成
+        args.ListsBtns=libo.getByClass("toIframe");
+   
+        
+
+        //这个标志表示有没有案例被打开(应用)
         args.openFlag=false;
 
         //show?
         args.showFlag=true;
 
-        //show menu
+        //表示总菜单容器中侧栏的隐藏的部分是不是显示
         args.show=false;
         
 
