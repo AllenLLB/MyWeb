@@ -42,6 +42,7 @@
     var oClose=document.querySelector("li[class='close']");
     oClose.onclick=function(){
         window.parent.libo.css(window.parent.args.mainWin,"display","none");
+        window.parent.libo.css(window.parent.args.canCon,"display","block");
         window.parent.libo.css(window.parent.args.indexLists,"display","block");
         window.parent.args.openFlag=false;
     }

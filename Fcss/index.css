@@ -10,6 +10,7 @@ body,html{
 
 /*index  container*/
 
+/*总容器*/
 #container{
 	width: 100%;
 	height: 100%;
@@ -31,8 +32,7 @@ body,html{
 
 	position: relative;
 }
-
-
+/*桌面的应用*/
 #container>ul.index-lists li{
 	
 	border-sizing:border-box;
@@ -48,6 +48,7 @@ body,html{
 	margin: 60px;
 }
 
+
 /*对每一个应用单独设计*/
 
 #container>ul.index-lists li.puzzle{
@@ -60,10 +61,7 @@ body,html{
 	font-size: 13px;
 }
 
-
-
-
-
+/*mouseover之后的应用的样式*/
 #container>ul.index-lists li[name="active"]{
 	border: 1px dashed #ccc;
 }
@@ -75,7 +73,7 @@ body,html{
 #container .main{
 	width: 100%;
 	height: 94%;
-	background: rgba(41,122,204,.2);
+	background: rgba(41,122,204,.1);
 	position: relative;
 
 	opacity: 0;
@@ -83,6 +81,7 @@ body,html{
 	display: none;
 }
 
+/*侧边栏的菜单和按钮*/
 #container .main .side-nav{
 	width: 320px;
 	height: 100%;
@@ -91,13 +90,13 @@ body,html{
 	left: -256px;
 }
 
-
+/*侧边栏菜单的总容器*/
 .side-nav .artLists{
 	width: 256px;
 	height: 100%;
 	position: absolute;
 	left: 0;
-	background: rgba(7,41,76,.85);
+	background: rgba(18,52,116,1);
 }
 
 /*lists*/
@@ -109,29 +108,63 @@ body,html{
 
 
 /*side中的list的排列*/
-.artLists ul.side-lists li{
-	width: 90%;
+.artLists>ul.side-lists li{
+	width: auto;
 	height: 50px;
 	margin: 10px auto 0 auto;
-	background: green;
+	background: transparent;
 
 	color: #fff;
-	font-size: 25px;
-	font-weight: bolder;
-
-	text-align: center;
+	font-size: 17px;
+	
+	text-indent: 80px;
 	line-height: 50px;
 
 	cursor:pointer;
 }
 
+/*对每一个li进行单独的设计*/
+.artLists>ul.side-lists li.puzzle{
+	background: transparent url(../Fpics/PuzzleLi.png) 15px 0 no-repeat;
+
+	text-indent: 80px;
+}
+.artLists>ul.side-lists li.puzzle:hover{
+	background: rgba(137,147,162,.5) url(../Fpics/PuzzleLi.png) 15px 0 no-repeat;
+
+}
+
+
+/*侧边栏菜单的按钮的容器*/
 .side-nav .menuList{
 	width: 64px;
 	height: 100%;
 	position: absolute;
 	left: 256px;
-	background: rgb(0,0,0);
+	/*background: rgb(0,0,0);*/
+
+	/*overflow:hidden;		*/
 }
+
+
+/*侧边栏菜单按钮*/
+.side-nav .menuList .btn-menu{
+	width: 100%;
+	height: 45px;
+	background: transparent;
+
+	color: #fff;
+
+	font-size: 20px;
+	cursor: pointer;
+
+	text-align: center;
+
+	position: absolute;
+
+	bottom: 0;
+}
+
 
 
 /*main 中显示的子元素*/
@@ -139,16 +172,20 @@ body,html{
 #container .main .show-win{
 	width: 96%;
 	height: 100%;
-	background: red;
+	background: transparent;
 	position: absolute;
 	left: 64px;
 }
 
+
+/*划开之后的主要的部分采用瀑布流的部分*/
 #container .main .show-win .win-lists{
 	width: 100%;
 	height: 100%;
 }
 
+
+/*每一个子项*/
 .main .show-win .win-lists li{
 	width: 100px;
 	height: 100px;
@@ -158,6 +195,24 @@ body,html{
 
 	color: #000;
 }
+
+/*对每一个子项进行单独的设计*/
+.main .show-win .win-lists li.puzzle{
+	width: 150px;
+	height: 150px;
+	border: 2px solid transparent;
+	background: url(../Fpics/PuzzleBig.png) no-repeat;
+	float: left;
+	margin: 30px;
+
+	color: #000;
+}
+.main .show-win .win-lists li.puzzle:hover{
+	border: 2px solid #ccc;
+
+	background: url(../Fpics/PuzzleBig.png) no-repeat;
+}
+
 
 
 
@@ -171,6 +226,8 @@ body,html{
 	bottom: 0;
 
 	clear: both;
+
+	z-index: 5;
 }
 
 .foot-nav .nav{
@@ -180,7 +237,7 @@ body,html{
 
 .foot-nav>ul li{
 	height: 100%;
-	background: url(../Fpics/win10.png);
+	background: url(../Fpics/win10.png) center center no-repeat;
 	width: 45px;
 
 
@@ -197,9 +254,9 @@ body,html{
 #container .containerWins{
 
 	width: 100%;
-	height: 94%;
+	height: 100%;
 
-	background: rgba(232,16,16,.5);
+	/*background: rgba(232,16,16,.5);*/
 	position: absolute;
 
 	z-index: 5;
@@ -209,7 +266,7 @@ body,html{
 
 	display: none;
 
-	overflow-x: auto;
+	overflow-x: hidden;
 	overflow-y: hidden;
 }
 
@@ -217,11 +274,30 @@ body,html{
 	width: 100%;
 	height: 100%;
 
-	min-width: 1250px;
+	
 
-	min-height: 550px;
-
-	border: 1px solid black;
+	border: 1px solid transparent;
 
 
+}
+
+/*layout clock timer*/
+
+#canvas {
+	box-sizing: border-box;
+
+	width: 150px;
+	height: 150px;
+	
+	border-radius: 75px;
+	background: rgba(255,255,255,.4) url(../Fpics/clockBg.png) no-repeat;
+
+	position: absolute;
+
+	top: 100px;
+	left: 1200px;
+
+	z-index: 10;
+
+	cursor: move;
 }

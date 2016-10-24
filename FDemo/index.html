@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
 	<meta charset="UTF-8">
 	<title>Header</title>
@@ -13,8 +13,14 @@
 			<div class="side-nav">
 				<div class="artLists">
 					<ul class="side-lists">
-						<li class="li1 toIframe" data-url="../ProjectLists/拼图/index.html">拼图</li>
-						<li class="li2 toIframe" data-url="general.html">shaidhu</li>
+						<li class="li1 toIframe puzzle" data-url="../ProjectLists/拼图/index.html" data-setting='{
+							"min-width":1300,
+							"min-height":600
+						}'>puzzle</li>
+						<li class="li2 toIframe music" data-url="../ProjectLists/网易云音乐/index.html" data-setting='{
+							"min-width":1010,
+							"min-height":671
+						}'>CloudMusic</li>
 						<li class="li3 toIframe" data-url="general.html">shdha</li>
 						<li class="li4 toIframe" data-url="general.html">jhdahd</li>
 						<li class="li5 toIframe" data-url="general.html">dajhd</li>
@@ -25,14 +31,20 @@
 				</div>
 				<div class="menuList">
 					<ul>
-						<li style="cursor:pointer;background:blue;color:#fff;" class="btn-menu">menu</li>
+						<li  class="btn-menu">menu</li>
 					</ul>
 				</div>
 			</div>
 			<div class="show-win">
 				<ul class="win-lists">
-					<li class="li1 toIframe" data-url="../ProjectLists/拼图/index.html">拼图</li>
-					<li class="li2 toIframe" data-url="general.html">shaidhu</li>
+					<li class="li1 toIframe puzzle" data-url="../ProjectLists/拼图/index.html" data-setting='{
+						"min-width":1300,
+						"min-height":600
+					}'></li>
+					<li class="li2 toIframe music" data-url="../ProjectLists/网易云音乐/index.html" data-setting='{
+						"min-width":1010,
+						"min-height":671
+					}'>CloudMusic</li>
 					<li class="li3 toIframe" data-url="general.html">shdha</li>
 					<li class="li4 toIframe" data-url="general.html">jhdahd</li>
 					<li class="li5 toIframe" data-url="general.html">dajhd</li>
@@ -43,8 +55,14 @@
 			</div>
 		</div>
 		<ul class="index-lists">
-			<li class="drag li1 toIframe puzzle" data-url="../ProjectLists/拼图/index.html">拼图</li>
-			<li class="drag li2 toIframe" data-url="general.html">22shaidhu</li>
+			<li class="drag li1 toIframe puzzle" data-url="../ProjectLists/拼图/index.html" data-setting='{
+						"min-width":1300,
+						"min-height":600
+			}'>puzzle</li>
+			<li class="drag li2 toIframe music" data-url="../ProjectLists/网易云音乐/index.html" data-setting='{
+				"min-width":1010,
+				"min-height":671
+			}'>CloudMusic</li>
 			<li class="drag li3 toIframe" data-url="general.html">33shdha</li>
 			<li class="drag li4 toIframe" data-url="general.html">jhdahd</li>
 			<li class="drag li5 toIframe" data-url="general.html">dajhd</li>
@@ -61,10 +79,10 @@
 		<div class="containerWins">
 			<iframe   name="containerWins" src=""></iframe>
 		</div>
-
-
+		<div id="canvas">
+			<canvas class="clock" width="150" height="150"></canvas>
+		</div>
 	</div>
-
 
 
 
@@ -83,6 +101,10 @@
         //click show menu
         args.oBtn=libo.getByClass("show-menu")[0];
 
+        //container
+
+        args.container=document.getElementById("container");
+
         //foot nav
         args.footNav=libo.getByClass("foot-nav")[0];
 
@@ -95,9 +117,15 @@
         args.menuList=libo.getByClass("menuList")[0];
         args.oBtnList=libo.getByClass("btn-menu")[0];
 
+        //canvas  container
+
+        args.canCon=document.getElementById("canvas");
+        args.can=libo.getByClass("clock")[0];
+
         //window iframe
 
         args.showWin=libo.getByClass("show-win")[0];
+        args.winLists=libo.getByClass("win-lists")[0];
 
         //index lists
 
@@ -128,16 +156,20 @@
     }());
 
     args.oBtn.onclick=showOrCloswAllList;
+    // args.showWin.onclick=showOrCloswAllList;
     args.oBtnList.onclick=showOrClosMenu;
 	//show??or??close
 
-	function showOrCloswAllList(){
+	function showOrCloswAllList(e){
+
+		var oE=e||window.event;
 
 		if (args.showFlag) {
 
 			if(!args.openFlag){
 
 				libo.css(args.oMain,"display","block");
+				libo.css(args.canCon,"display","none");
 				libo.startMove(args.oMain,{opacity:80},30,function(){
 					libo.css(args.indexLists,"display","none");
 				});
@@ -156,10 +188,11 @@
 			}
 		}else{
 
-			if(!args.openFlag){
-				args.indexLists.style.display="block";  
+			if(!args.openFlag){ 
+				libo.css(args.indexLists,"display","block");
 				libo.startMove(args.oMain,{opacity:0},30,function(){
 					libo.css(args.oMain,"display","none");
+					libo.css(args.canCon,"display","block");
 					// mainWin.style.display="block"; //暂时不用这个
 				});
 
@@ -187,6 +220,12 @@
 			libo.startMove(args.showWin,{left:args.showWin.offsetLeft-changeWidth},30);
 			args.show=false;
 		}
+
+		//取消事件冒泡
+		oE.cancelBubble=true;
+		oE.stopPropagation();
+
+		//取消事件捕获
 	}
 
 	//showMenu??
@@ -240,6 +279,30 @@
 				// args.mainWin.style.display="block";
 				libo.css(args.indexLists,"display","none");
 				libo.css(args.mainWin,"display","block");
+				libo.css(args.canCon,"display","none");
+
+				//给新的应用的窗口
+				//设置在页面上父级网页上显示的位置
+				var setting=this.getAttribute("data-setting");
+				if(setting&&setting!==""){
+					setting=$.parseJSON(setting);
+					libo.css(args.Tiframe,"width",setting["min-width"]);
+					libo.css(args.Tiframe,"min-width",setting["min-width"]);
+					libo.css(args.Tiframe,"min-height",setting["min-height"]);
+					libo.css(args.Tiframe,"height",setting["min-height"]);
+
+					args.Tiframe.style.left="50%";
+					args.Tiframe.style.top="50%";
+
+					libo.css(args.Tiframe,"marginLeft",-setting["min-width"]/2);
+					libo.css(args.Tiframe,"marginTop",-setting["min-height"]/2-1);
+
+					args.Tiframe.style.position="absolute";
+					args.mainWin.style.zIndex=1;
+					
+
+				}
+
 				args.Tiframe.src=this.getAttribute("data-url");	
 
 				args.openFlag=true;
@@ -250,6 +313,199 @@
 				}
 			}
 		}
+	}());
+
+	//画时钟模块
+	(function(){
+		if(args.can==null){
+			//your browser do not support canvas
+		}else{
+			var ctx=args.can.getContext("2d");
+
+			var w=args.can.width;
+			var h=args.can.height;
+
+			var r=w/2||h/2;
+
+			//按照比例缩放
+			var scale=w/200;
+
+
+
+
+			//drawClock
+			function draw(){
+
+				var date=new Date();
+
+				ctx.clearRect(0,0,w,h);
+				var hour=date.getHours();
+				var minute=date.getMinutes();
+				var second=date.getSeconds();
+
+				drawBg();
+				drawAllPoint();
+				drawHour(hour,minute);
+				drawMinute(minute);
+				drawSecond(second);
+				drawPoint();
+
+				ctx.restore();
+
+
+			}
+			draw();
+			//定时
+			setInterval(draw,1000);
+			//drawBackground
+			function drawBg(){
+
+				ctx.save();			//将之前的环境保存下来
+				ctx.translate(r,r);
+				ctx.beginPath();
+				ctx.fillStyle="transparent";
+				ctx.arc(0,0,r,0,2*Math.PI,false);
+				ctx.fill();
+
+				ctx.closePath();
+			}
+
+			//drawAllPoints
+
+			function drawAllPoint(){
+				var rad;
+				var x;
+				var y;
+				ctx.fillStyle="black";
+				for(var i=0;i<60;i++){
+					rad=2*Math.PI /60 *i;
+					x=Math.cos(rad) * (r-5*scale);
+					y=-Math.sin(rad) * (r-5*scale);
+					ctx.beginPath();
+					if(i%5==0){
+						ctx.arc(x,y,4*scale,0,2*Math.PI,false);
+						ctx.closePath();
+						ctx.fill();
+					}else{
+						ctx.arc(x,y,2*scale,0,2*Math.PI,false);
+						ctx.closePath();
+						ctx.fill();
+					}
+					
+				}
+			}
+
+			function drawHour(hour,minute){
+				var rad=2 *Math.PI/ 12 *hour;
+				var mrad=2 *Math.PI/ 12 /60 *minute;
+				ctx.save();
+				ctx.rotate(rad+mrad);
+
+				ctx.beginPath();
+
+				ctx.lineWidth=5*scale;
+
+				ctx.lineCap="round";	//设置笔触
+				ctx.moveTo(0,10*scale);
+				ctx.lineTo(0,-r/2);
+
+				ctx.stroke();
+
+				ctx.closePath();
+				ctx.restore();
+			}
+
+			function drawMinute(minute){
+				var mrad=2 *Math.PI/ 60 *minute;
+				ctx.save();
+				ctx.rotate(mrad);
+
+				ctx.beginPath();
+
+				ctx.lineWidth=3*scale;
+				ctx.moveTo(0,10*scale);
+				ctx.lineTo(0,-r+20*scale);
+
+				ctx.stroke();
+
+				ctx.closePath();
+				ctx.restore();
+			}
+
+			function drawSecond(second){
+				var srad=2 *Math.PI/ 60 *second;
+				ctx.save();
+				ctx.rotate(srad);
+
+				ctx.beginPath();
+
+				ctx.fillStyle="red";
+
+				ctx.moveTo(2*scale,10*scale);
+				ctx.lineTo(-2*scale,10*scale);
+				ctx.lineTo(-1*scale,-r+10*scale);
+				ctx.lineTo(1*scale,-r+10*scale);
+
+				ctx.closePath();
+				ctx.fill();
+				ctx.restore();
+			}
+
+			function drawPoint(){
+				ctx.beginPath();
+
+				ctx.fillStyle="#B4B4BC";
+
+				ctx.arc(0,0,2*scale,0,2 * Math.PI,false);
+
+				ctx.closePath();
+				ctx.fill();
+			}
+
+		}
+	}());
+
+	//对钟表用一个弹性拖动运动
+	(function(){
+
+		args.canCon.onmousedown=function(e){
+
+			var oE=e||window.event;
+			//鼠标距离自身边界的位置
+			var canX=oE.clientX-this.offsetLeft;
+			var canY=oE.clientY-this.offsetTop;
+
+			// document.title=canX+" "+canY;
+
+			document.onmousemove=function(e){
+				var oE=e||window.event;
+				var l=oE.clientX-canX;
+				var t=oE.clientY-canY;
+
+				if(l<0){
+					l=0;
+				}else if(l>args.container.offsetWidth-args.canCon.offsetWidth){
+					l=args.container.offsetWidth-args.canCon.offsetWidth
+				}
+
+				if(t<0){
+					t=0;
+				}else if(t>args.container.offsetHeight-args.canCon.offsetHeight){
+					t=args.container.offsetHeight-args.canCon.offsetHeight
+				}
+
+				libo.css(args.canCon,"left",l);
+
+				libo.css(args.canCon,"top",t);
+			}
+
+			document.onmouseup=function(){
+				document.onmousemove=null;
+				document.onmouseup=null;
+			}
+
+		}	
+
 	}());
 </script>
 </body>

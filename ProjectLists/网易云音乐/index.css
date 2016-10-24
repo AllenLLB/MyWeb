@@ -27,7 +27,7 @@ html,body{
 #container .head_nav{
 	width: 100%;
 	height: 50px;
-	background: #A07171;
+	background: #C62F2F;
 
 	position: relative;
 }
@@ -37,11 +37,12 @@ html,body{
 	display: block;
 	width: 170px;
 	height: 100%;
-	background: #ccc;
+	background: url(imgs/logo.png) no-repeat;
 
 	position: absolute;
 
 	left: 0;
+
 }
 
 /*中间的搜索*/
@@ -49,10 +50,60 @@ html,body{
 #container .head_nav .search{
 	width: 250px;
 	height: 100%;
-	background: pink;
 
 	position: absolute;
 	left: 230px;
+}
+/*搜索框*/
+#container .head_nav .search input[name='search']{
+
+	box-sizing: border-box;
+
+
+	display: block;
+
+	width: 205px;
+
+	height: 22px;
+
+	background: #A82828;
+
+	outline: none;
+
+	border: none;
+
+	border-radius: 15px;
+
+	position: absolute;
+
+	top: 50%;
+	margin-top: -10px;
+
+	left: 28px;
+
+	text-indent: 15px;
+}
+
+#container .head_nav .search input[name='btn']{
+	
+	display: block;
+
+	width: 20px;
+	height: 22px;
+
+	background: red;
+
+	outline: none;
+
+	border: none;
+
+	position: absolute;
+
+	top: 50%;
+	margin-top: -10px;
+
+	left: 200px;
+	cursor: pointer;
 }
 /*右边的一系列操作*/
 #container .head_nav .action{
@@ -72,12 +123,40 @@ html,body{
 	float: left;
 }
 
+#container .head_nav .action .action_style li{
+	height: 70%;
+	width: 30%;
+	background: green;
+
+	float: left;
+	margin-left: 3%;
+
+	margin-top: 4%;
+
+	cursor: pointer;
+}
+
+
 #container .head_nav .action .action_status{
 	width: 30%;
 	height: 100%;
 	background: rgba(254,54,54,.5);
 
 	float: right;
+	position: relative;
+}
+
+.action_status li{
+	height: 70%;
+	width: 30%;
+	background: red;
+
+	float: left;
+	margin-left: 3%;
+
+	margin-top: 7%;
+
+	cursor: pointer;
 }
 
 /*主体部分*/
@@ -87,7 +166,6 @@ html,body{
 	height: 570px;
 	min-height: 570px;
 
-	background: #E56A5A;
 
 	clear: both;
 }
@@ -100,7 +178,7 @@ html,body{
 	height: 100%;
 
 	float: left;
-	background: transparent;
+	background: #F5F5F7;
 
 	position: relative;
 }
@@ -112,7 +190,7 @@ html,body{
 	width: 100%;
 	height: 160px;
 
-	background: #eee;
+	background: transparent;
 }
 
 .left_nav dl.suggest dt{
@@ -120,8 +198,10 @@ html,body{
 	height: 30px;
 	line-height: 30px;
 
-	font-size: 14px;
-	text-indent: 10px;
+	font-size: 13px;
+	text-indent: 15px;
+
+	color: #7D7D7D;
 }
 
 .left_nav dl.suggest dd{
@@ -133,6 +213,10 @@ html,body{
 
 	text-indent: 55px;
 	font-size: 13px;
+
+	color: #5C5C5C;
+
+	border-left: 4px solid transparent;
 }
 
 /*左边的第二个自定义菜单*/
@@ -148,8 +232,10 @@ html,body{
 	height: 30px;
 	line-height: 30px;
 
-	font-size: 14px;
-	text-indent: 10px;
+	font-size: 13px;
+	text-indent: 15px;
+
+	color: #7D7D7D;
 }
 
 .left_nav dl.mine dd{
@@ -161,6 +247,8 @@ html,body{
 	text-indent: 55px;
 
 	font-size: 13px;
+	color: #5C5C5C;
+	border-left: 4px solid transparent;
 }
 
 /*左边的第三个自定义菜单*/
@@ -168,7 +256,7 @@ html,body{
 	width: 100%;
 	height: 70px;
 
-	background: #A07171;
+	background: transparent;
 
 }
 
@@ -177,8 +265,10 @@ html,body{
 	height: 30px;
 	line-height: 30px;
 
-	font-size: 14px;
-	text-indent: 10px;
+	font-size: 13px;
+	text-indent: 15px;
+
+	color: #7D7D7D;
 }
 
 .left_nav dl.song_list dd{
@@ -190,12 +280,22 @@ html,body{
 	text-indent: 55px;
 
 	font-size: 13px;
-}
-/*设置所有的dd*/
 
-.left_nav dd:hover{
-	background: transparent;
+	color: #5C5C5C;
+
+	border-left: 4px solid transparent;
 }
+
+.left_nav dl.song_list dd:hover,.left_nav dl.suggest dd:hover,.left_nav dl.mine dd:hover{
+	cursor: pointer;
+
+	color: black;
+
+	border-left: 4px solid #C62F2F;
+
+	background: #E8E9EC;
+}
+
 
 
 
@@ -205,18 +305,19 @@ html,body{
 /*左下角的播放的部分*/
 #container .main .left_nav .now_play{
 	width: 100%;
-	height: 60px;
+	height: 59px;
 
+	border-top: 1px solid #E1E1E2;
 	position: absolute;
 
 	bottom: 0;
 
-	background: #ccc;
+	background: transparent;
 }
 
 /*主体右边的内容部分*/
 #container .main .right_content{
-	width: 200px;
+	width: 810px;
 	height: 100%;
 		
 	min-width: 810px;	

@@ -9,7 +9,7 @@
 <body>
 	<div id="container">
 		<div class="head_nav">
-			<a href="###" class="logo">logo</a>
+			<a href="###" class="logo"></a>
 			<form class="search">
 				<input type="text" name="search" placeholder="歌手,歌词" />
 				<input type="button" name="btn" />
@@ -19,12 +19,11 @@
 					<li></li>
 					<li></li>
 					<li></li>
-					<li></li>
 				</ul>
 				<ul class="action_status">
-					<li></li>
-					<li></li>
-					<li></li>
+					<li>最小化</li>
+					<li>最大化</li>
+					<li class="close">关闭</li>
 				</ul>
 			</div>
 		</div>
@@ -52,7 +51,14 @@
 				
 				<div class="now_play"></div>
 			</div>
-			<div class="right_content"></div>
+			<div class="right_content">
+				<ul class="right_con">
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+				</ul>
+			</div>
 		</div>
 		<div class="footer_nav">
 			<ul>
@@ -60,5 +66,22 @@
 			</ul>
 		</div>
 	</div>
+
+	<!--来操作关闭按钮-->
+
+	<script type="text/javascript">
+		var oClose=document.querySelector(".close");
+	    oClose.onclick=function(){
+	    	if(window.parent.libo){
+	    		window.parent.libo.css(window.parent.args.mainWin,"display","none");
+	    		window.parent.libo.css(window.parent.args.canCon,"display","block");
+	    		window.parent.libo.css(window.parent.args.indexLists,"display","block");
+	    		//在chrome上的显示有问题
+	    		window.parent.args.openFlag=false;
+	    	}
+
+	    	return false;
+	    }
+	</script>
 </body>
 </html>
