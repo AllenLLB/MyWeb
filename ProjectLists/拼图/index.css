@@ -2,12 +2,12 @@
 body{margin:0;padding:0;background:url(imgs/BigBack.jpg) }
 img{border: none;}
 li{list-style: none;}
-#container{width:411px;height:411px;border:1px solid hotpink;position:relative;margin:100px auto 0 auto;}
-#BigPic{width:411px;height:411px;border:1px solid hotpink;
+#container{width:411px;height:411px;border:1px solid #ccc;position:relative;margin:100px auto 0 auto;}
+#BigPic{width:411px;height:411px;border:1px solid #ccc;
         position:absolute;margin:0;
         top:100px;left:0}
 #redMe{width:300px;height:400px; border:1px solid #568;background:url(imgs/back.jpg);font-style:italic;
-        position:absolute;top:90px;right:40px;letter-spacing:5px;text-indent:25px;color: #fff;}
+        position:absolute;top:90px;right:40px;letter-spacing:5px;text-indent:25px;color: #000;}
 #redMe p{color: blue;font-weight: bolder;font-size: 30px;position: absolute;bottom: 25px;left: 25px;display: none;}
 #container .all{list-style:none;padding:0;margin:0;width:137px;height:137px;}
 #container .li1{position:absolute; top:0;left:0}
@@ -33,29 +33,36 @@ li{list-style: none;}
 }
 #button button{
     width:65px;
+    background: #ccc;
+
+    outline: none;
 }
 
 /*actionMenu*/
 
 #actionMenu{
 
-    width: 150px;
-    height: 30px; 
+    width: 240px;
+    height: 60px; 
     position: absolute;
     right: 10px;
     top: 3px;
 }
 
 ul#actionMenu li{
-    width: 30%；
+    width: 60px;
     height:100%;
     float: left;
-
+    
+    margin-left:20px; 
     color: #fff;
 
     font-weight: bolder;
 
-    border:  1px solid #EA2000;
 
     cursor: pointer;
+}
+ul#actionMenu li.close{
+    float: right;
+    background: url("imgs/uncheck-60.png") no-repeat; 
 }

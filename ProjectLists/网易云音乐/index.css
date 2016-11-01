@@ -1,5 +1,6 @@
 @import url(../../Fcss/reset.css);
 
+
 /*设置整体框架*/
 /*按照网易云音乐的实际来(有限制的最大最小值)*/
 
@@ -7,6 +8,7 @@ html,body{
 	width: 100%;
 	height: 100%;
 }
+img{display: block;}
 
 #container{
 	min-width: 1010px;
@@ -344,15 +346,190 @@ html,body{
 /*li1*/
 .main .right_content>.right_con li.day1{
 		background: blue;
+
+		overflow:hidden;	/*作用是取消margin合并*/
 }
-.right_con li.day1>.findMusic_nav{
+
+/*/第一部分 总高度是570 */
+.right_con li.day1>.findMusic_nav{	/*50px*/
+	border-bottom: 1px solid #ccc;
+	width: 90%;
+	height: 40px;
+	margin: 2px auto 18px auto;
+}
+.right_con li.day1>.findMusic_nav li{
+	width: auto;
+	height: 100%;
+	line-height: 40px;
+	padding-left: 15px;
+	padding-right: 15px;
+
+	border-bottom: 2px solid transparent;
+
+	margin-left: 25px;
+
+	float: left;
+
+	cursor: pointer;
+
+	color: #000;
+
+	font-size: 14px;
+}
+.right_con li.day1>.findMusic_nav li:hover{
+	color: red;
+}
+/*这里是选项卡的第一部分的设置 宽度是729px*/
+.right_con li.day1> .personal{
+	width:90%;
+	height: 519px;
+	background: #ccc;
+
+	margin: 0 auto 0 auto;
+
+	display: none;
+}
+
+
+/*设置幻灯片区域的大小*/
+.right_con li.day1> .personal>.carousel{
+	width: 729px;
+	height: 200px;
+
+	position: relative;		/*为了按钮*/
+}
+.personal>.carousel ul.poster-list{
+	width: 729px;
+	height: 200px;
+}
+.personal>.carousel .poster-list li.poster-item{
+	/*width: 540px;
+	height: 200px;*/
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+
+.personal>.carousel .poster-btn{
+	position: absolute;
+	top: 0;
+	width: 100px;
+	height: 200px;
+	z-index: 10;
+	cursor: pointer;
+	opacity: .8;
+}
+.personal>.carousel .poster-prev-btn{
+	left: 0;
+	background: url(../../Fpics/btn_l.png) center center no-repeat;
+}
+
+.personal>.carousel .poster-next-btn{
+	right: 0;
+	background: url(../../Fpics/btn_r.png) center center no-repeat;
+}
+
+/*幻灯片设置完毕*/
+
+.right_con li.day1> .personal>.arts{
+	box-sizing: border-box;
+
+	width: 100%;
+	height: 260px;
+
+	padding-top: 10px;
+
+	background: green;
+
+	color:#000;
+}
+.right_con li.day1> .personal>.arts h2{
+	line-height: 25px;
+
+	font-size: 18px;
+}
+
+.right_con li.day1> .personal>.arts>ul{
+	width: 100%;
+	height: 150px;
+	margin-top: 30px;
+}
+
+.right_con li.day1> .personal>.arts>ul li{
+	width: 130px;
+	height: 150px;
+	background: black;
+	float: left;
+}
+
+.right_con li.day1> .styles{
+	width:90%;
+	height: 519px;
+	background: #fff;
+
+	margin: 0 auto 0 auto;
+
+	display: block;	/*作为隐藏的选项卡*/
+
+	position: relative;	/*为后面的自定义滚动条做准备*/
+}
+
+/*设置预加载图片的目录*/
+.right_con li.day1> .styles .signersNav{
+	width: 100%;
+	height: 35px;
 
 }
-.right_con li.day1>.carousel{
+
+/*设置预加载图片的目录*/
+.right_con li.day1> .styles .signersNav li{
+	width: auto;
+	height: 35px;
+	line-height: 35px;
+
+	float: left;
+
+	padding-left: 10px;
+
+	background: #ccc;
+}
+
+.right_con li.day1 .styles .signers{/*可滑动区域是519-55的显示区域的大小*/
+	
+	height: 474px;
+
+	width: 96%;
+	background: #435B3E;
+
+	clear: both;
+
+	overflow: hidden;
+	position: relative;
 
 }
-.right_con li.day1>.arts{
 
+.right_con li.day1 .styles .signers p{
+	height: auto;
+	position: absolute;
+	top: 0;
+}
+
+.right_con li.day1 .styles .slideBar{
+	width: 10px;
+	height: 55px;
+
+	background: #EF5656;
+
+	position: absolute;
+
+	right: 0;
+	top: 0;
+
+	/*设置圆角*/
+	border-radius: 10px;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	-ms-border-radius: 10px;
 }
 
 /*2*/

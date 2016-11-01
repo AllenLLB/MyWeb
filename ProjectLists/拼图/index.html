@@ -7,9 +7,9 @@
 </head>
 <body>
     <ul id="actionMenu">
-        <li class="small">最小化</li>
-        <li class="big">最大化</li>
-        <li class="close">关闭</li>
+        <li class="small" style="display:none;"></li>
+        <li class="big" style="display:none;"></li>
+        <li class="close"></li>
     </ul>
     <ul id="container">
         <li class="all li1"><img name="img" src="" width="137" height="137"/></li>
@@ -41,11 +41,17 @@
 <script type="text/javascript">
     var oClose=document.querySelector("li[class='close']");
     oClose.onclick=function(){
-        window.parent.libo.css(window.parent.args.mainWin,"display","none");
-        window.parent.libo.css(window.parent.args.canCon,"display","block");
-        window.parent.libo.css(window.parent.args.indexLists,"display","block");
-        window.parent.args.Tiframe.src="";
-        window.parent.args.openFlag=false;
+        if(window.parent.libo){
+            window.parent.libo.css(window.parent.args.mainWin,"display","none");
+            window.parent.libo.css(window.parent.args.canCon,"display","block");
+            window.parent.libo.css(window.parent.args.indexLists,"display","block");
+            window.parent.libo.css(window.parent.args.canCon,"display","block");
+            window.parent.args.Tiframe.src="";
+            //在chrome上的显示有问题
+            window.parent.args.openFlag=false;
+        }
+        //取消对象的默认事件
+        return false;
     }
 </script>
 </html>
