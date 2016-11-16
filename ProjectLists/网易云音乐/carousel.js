@@ -43,7 +43,7 @@ var carousel=function(poster){
 	//由于用户可能自己带了配置参数,这是需要重新配置,用jQuery的扩展方法
 	$.extend(this.setting,this.getSetting());
 
-	console.log(this.setting);	//succeed
+	// console.log(this.setting);	//succeed
 
 	//执行默认配置
 	this.setSettingValue();
@@ -72,7 +72,7 @@ var carousel=function(poster){
 
 	//检测是否开启自动播放并且设置在鼠标移动到木马区域的时候清除定时器
 	if(this.setting.autoPlay){
-		// _self.autoPlay();
+		_self.autoPlay();
 		_self.poster.hover(function(){	//hover函数包含了鼠标移入和鼠标移出两个函数
 			//第一个表示鼠标移入事件
 			if(_self.timer){
@@ -80,7 +80,7 @@ var carousel=function(poster){
 			}
 		},function(){
 			//第二个表示鼠标移出事件
-			// _self.autoPlay();
+			_self.autoPlay();
 		});		
 	}
 

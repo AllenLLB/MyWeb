@@ -7,10 +7,11 @@
 	<link rel="stylesheet" type="text/css" href="index.css" /> 
 	<script type="text/javascript" src="../../Fjs/jquery-1.8.3.min.js"></script>
 	<script type="text/javascript" src="carousel.js"></script>
+	<script type="text/javascript" src="../../Fjs/Animate.js"></script>
 </head>
 <body>
 	<div id="container">
-		<div class="head_nav">
+		<div id="head_nav">
 			<a href="###" class="logo"></a>
 			<form class="search">
 				<input type="text" name="search" placeholder="歌手,歌词" />
@@ -23,24 +24,24 @@
 					<li></li>
 				</ul>
 				<ul class="action_status">
-					<li>最小化</li>
-					<li>最大化</li>
-					<li class="close">关闭</li>
+					<li></li>
+					<li></li>
+					<li class="close"></li>
 				</ul>
 			</div>
 		</div>
-		<div class="main">
-			<div class="left_nav">
+		<div id="main">
+			<div id="leftPart">
 				<dl class="suggest">
 					<dt>推荐</dt>
-					<dd>发现音乐</dd>
-					<dd>私人FM</dd>
+					<dd class="tabs">发现音乐</dd>
+					<dd class="tabs">私人FM</dd>
 					<dd>mv</dd>
 					<dd>朋友</dd>
 				</dl>
 				<dl class="mine">
 					<dt>我的音乐</dt>
-					<dd>本地音乐</dd>
+					<dd class="tabs">本地音乐</dd>
 					<dd>下载管理</dd>
 					<dd>我的音乐云盘</dd>
 					<dd>我的歌手</dd>
@@ -48,19 +49,21 @@
 				</dl>
 				<dl class="song_list">
 					<dt>创建的歌单</dt>
-					<dd>我喜欢的音乐</dd>
+					<dd class="tabs">我喜欢的音乐</dd>
 				</dl>
 				
 				<div class="now_play"></div>
 			</div>
-			<div class="right_content">
-				<ul class="right_con">
-					<li class="suggestDay day1">
-						<ul class="findMusic_nav">
-							<li>个性推荐</li>
-							<li>歌星风采展</li>
+			<div id="rightPart">
+				<ul id="rightMain">
+					<li id="right_card1" class="cards ">
+						<ul class="navs">
+							<li name="active">个性推荐</li>
+							<li name="active">歌星风采展</li>
+							<li>主播电台</li>
+							<li>最新音乐</li>
 						</ul>
-						<div class="personal">
+						<div class="tab_1 SCards">
 							<div class="J_Poster poster-main carousel" data-setting='{
 
 								"height": 200,      
@@ -86,131 +89,451 @@
 							<div class="arts">
 								<h2>推荐歌单</h2>
 								<ul>
-									<li style="margin-left:3px"></li>
-									<li style="margin-left: 18px;"></li>
-									<li style="margin-left: 18px;"></li>
-									<li style="margin-left: 18px;"></li>
-									<li style="margin-left: 18px;"></li>
+									<li><img src="imgs/song1.png" alt="song1" />
+										<span>21546</span>
+										<p>愿你拥有勇敢告别的魂如草丛中淌过的小溪</p>
+									</li>
+									<li><img src="imgs/song2.png" alt="song2" />
+										<span>54854</span>
+										<p>愿你拥有勇敢告别的魂如草丛中淌过的小溪</p>
+									</li>
+									<li><img src="imgs/song3.png" alt="song3" />
+										<span>45584</span>
+										<p>愿你拥有勇敢告别的魂如草丛中淌过的小溪</p>
+									</li>
 								</ul>
 							</div>
 						</div>
-						<div class="styles">
+						<div class="tab_2 SCards noShow">
 							<ul class="signersNav">
-								<li>12313</li>
-								<li>456</li>
-								<li>4848</li>
-								<li>888</li>
-								<li>88s7d</li>
-								<li>ds84a8d</li>
-								<li>5as4</li>
-								<li>s45d</li>
-								<li>sa45</li>
-								<li>sa45</li>
-								<li>5as4</li>
-								<li>s45d</li>
-								<li>sa45</li>
-								<li>sa45</li>
-								<li>5as4</li>
-								<li>s45d</li>
-								<li>sa45</li>
-								<li>sa45</li>
-								<li>5</li>
+								<li>热门标签：</li>
+								<li>华语</li>
+								<li>流行</li>
+								<li>摇滚</li>
+								<li>民谣</li>
+								<li>电子</li>
+								<li>轻音乐</li>
+								<li>影视原声</li>
+								<li>ACG</li>
+								<li>怀旧</li>
+								<li>治愈</li>
 							</ul>
 							<div class="signers">
-								<p>
-									E[attr];	//具有attr属性的元素
-E[attr="val"];	//具有attr属性而且attr属性等于val的元素
-E[attr~="val"];	//具有attr属性而且attr属性值为空格隔开的字段列表,其中有一个值为val 
-E[attr|="val"];	//具有attr属性且属性值为以val开头并用连接符"-"分隔的字符串的E元素。
-E[attr^="val"];	//具有attr属性且属性值为以val开头的元素
-E[attr$="val"];	//具有attr属性且属性值为以val结尾的元素
-E[attr*="val"];	//具有attr属性且属性值中包含val的元素E[attr];	//具有attr属性的元素
-E[attr="val"];	//具有attr属性而且attr属性等于val的元素
-E[attr~="val"];	//具有attr属性而且attr属性值为空格隔开的字段列表,其中有一个值为val 
-E[attr|="val"];	//具有attr属性且属性值为以val开头并用连接符"-"分隔的字符串的E元素。
-E[attr^="val"];	//具有attr属性且属性值为以val开头的元素
-E[attr$="val"];	//具有attr属性且属性值为以val结尾的元素
-E[attr*="val"];	//具有attr属性且属性值中包含val的元素E[attr];	//具有attr属性的元素
-E[attr="val"];	//具有attr属性而且attr属性等于val的元素
-E[attr~="val"];	//具有attr属性而且attr属性值为空格隔开的字段列表,其中有一个值为val 
-E[attr|="val"];	//具有attr属性且属性值为以val开头并用连接符"-"分隔的字符串的E元素。
-E[attr^="val"];	//具有attr属性且属性值为以val开头的元素
-E[attr$="val"];	//具有attr属性且属性值为以val结尾的元素
-E[attr*="val"];	//具有attr属性且属性值中包含val的元素E[attr];	//具有attr属性的元素
-E[attr="val"];	//具有attr属性而且attr属性等于val的元素
-E[attr~="val"];	//具有attr属性而且attr属性值为空格隔开的字段列表,其中有一个值为val 
-E[attr|="val"];	//具有attr属性且属性值为以val开头并用连接符"-"分隔的字符串的E元素。
-E[attr^="val"];	//具有attr属性且属性值为以val开头的元素
-E[attr$="val"];	//具有attr属性且属性值为以val结尾的元素
-E[attr*="val"];	//具有attr属性且属性值中包含val的元素E[attr];	//具有attr属性的元素
-E[attr="val"];	//具有attr属性而且attr属性等于val的元素
-E[attr~="val"];	//具有attr属性而且attr属性值为空格隔开的字段列表,其中有一个值为val 
-E[attr|="val"];	//具有attr属性且属性值为以val开头并用连接符"-"分隔的字符串的E元素。
-E[attr^="val"];	//具有attr属性且属性值为以val开头的元素
-E[attr$="val"];	//具有attr属性且属性值为以val结尾的元素
-E[attr*="val"];	//具有attr属性且属性值中包含val的元素E[attr];	//具有attr属性的元素
-E[attr="val"];	//具有attr属性而且attr属性等于val的元素
-E[attr~="val"];	//具有attr属性而且attr属性值为空格隔开的字段列表,其中有一个值为val 
-E[attr|="val"];	//具有attr属性且属性值为以val开头并用连接符"-"分隔的字符串的E元素。
-E[attr^="val"];	//具有attr属性且属性值为以val开头的元素
-E[attr$="val"];	//具有attr属性且属性值为以val结尾的元素
-E[attr*="val"];	//具有attr属性且属性值中包含val的元素E[attr];	//具有attr属性的元素
-E[attr="val"];	//具有attr属性而且attr属性等于val的元素
-E[attr~="val"];	//具有attr属性而且attr属性值为空格隔开的字段列表,其中有一个值为val 
-E[attr|="val"];	//具有attr属性且属性值为以val开头并用连接符"-"分隔的字符串的E元素。
-E[attr^="val"];	//具有attr属性且属性值为以val开头的元素
-E[attr$="val"];	//具有attr属性且属性值为以val结尾的元素
-E[attr*="val"];	//具有attr属性且属性值中包含val的元素E[attr];	//具有attr属性的元素
-E[attr="val"];	//具有attr属性而且attr属性等于val的元素
-E[attr~="val"];	//具有attr属性而且attr属性值为空格隔开的字段列表,其中有一个值为val 
-E[attr|="val"];	//具有attr属性且属性值为以val开头并用连接符"-"分隔的字符串的E元素。
-E[attr^="val"];	//具有attr属性且属性值为以val开头的元素
-E[attr$="val"];	//具有attr属性且属性值为以val结尾的元素
-E[attr*="val"];	//具有attr属性且属性值中包含val的元素E[attr];	//具有attr属性的元素
-E[attr="val"];	//具有attr属性而且attr属性等于val的元素
-E[attr~="val"];	//具有attr属性而且attr属性值为空格隔开的字段列表,其中有一个值为val 
-E[attr|="val"];	//具有attr属性且属性值为以val开头并用连接符"-"分隔的字符串的E元素。
-E[attr^="val"];	//具有attr属性且属性值为以val开头的元素
-E[attr$="val"];	//具有attr属性且属性值为以val结尾的元素
-E[attr*="val"];	//具有attr属性且属性值中包含val的元素E[attr];	//具有attr属性的元素
-E[attr="val"];	//具有attr属性而且attr属性等于val的元素
-E[attr~="val"];	//具有attr属性而且attr属性值为空格隔开的字段列表,其中有一个值为val 
-E[attr|="val"];	//具有attr属性且属性值为以val开头并用连接符"-"分隔的字符串的E元素。
-E[attr^="val"];	//具有attr属性且属性值为以val开头的元素
-E[attr$="val"];	//具有attr属性且属性值为以val结尾的元素
-E[attr*="val"];	//具有attr属性且属性值中包含val的元素E[attr];	//具有attr属性的元素
-E[attr="val"];	//具有attr属性而且attr属性等于val的元素
-E[attr~="val"];	//具有attr属性而且attr属性值为空格隔开的字段列表,其中有一个值为val 
-E[attr|="val"];	//具有attr属性且属性值为以val开头并用连接符"-"分隔的字符串的E元素。
-E[attr^="val"];	//具有attr属性且属性值为以val开头的元素
-E[attr$="val"];	//具有attr属性且属性值为以val结尾的元素
-E[attr*="val"];	//具有attr属性且属性值中包含val的元素E[attr];	//具有attr属性的元素
-E[attr="val"];	//具有attr属性而且attr属性等于val的元素
-E[attr~="val"];	//具有attr属性而且attr属性值为空格隔开的字段列表,其中有一个值为val 
-E[attr|="val"];	//具有attr属性且属性值为以val开头并用连接符"-"分隔的字符串的E元素。
-E[attr^="val"];	//具有attr属性且属性值为以val开头的元素
-E[attr$="val"];	//具有attr属性且属性值为以val结尾的元素
-E[attr*="val"];	//具有attr属性且属性值中包含val的元素
-								</p>
+								<ul class="signerlists">
+									<li><img src="imgs/singerli.png" alt="singer" /></li>
+									<li><img src="imgs/singerli.png" alt="singer" /></li>
+									<li><img src="imgs/singerli.png" alt="singer" /></li>
+									<li><img src="imgs/singerli.png" alt="singer" /></li>
+									<li><img src="imgs/singerli.png" alt="singer" /></li>
+									<li><img src="imgs/singerli.png" alt="singer" /></li>
+									<li><img src="imgs/singerli.png" alt="singer" /></li>
+									<li><img src="imgs/singerli.png" alt="singer" /></li>
+									<li><img src="imgs/singerli.png" alt="singer" /></li>
+									<li><img src="imgs/singerli.png" alt="singer" /></li>
+									<li><img src="imgs/singerli.png" alt="singer" /></li>
+									<li><img src="imgs/singerli.png" alt="singer" /></li>
+									<li><img src="imgs/singerli.png" alt="singer" /></li>
+									<li><img src="imgs/singerli.png" alt="singer" /></li>
+									<li><img src="imgs/singerli.png" alt="singer" /></li>
+									<li><img src="imgs/singerli.png" alt="singer" /></li>
+									<li><img src="imgs/singerli.png" alt="singer" /></li>
+									<li><img src="imgs/singerli.png" alt="singer" /></li>
+									<li><img src="imgs/singerli.png" alt="singer" /></li>
+									<li><img src="imgs/singerli.png" alt="singer" /></li>
+									<li><img src="imgs/singerli.png" alt="singer" /></li>
+									<li><img src="imgs/singerli.png" alt="singer" /></li>
+									<li><img src="imgs/singerli.png" alt="singer" /></li>
+									<li><img src="imgs/singerli.png" alt="singer" /></li>
+								</ul>
 							</div>
 
 							<div class="slideBar">
 							</div>
 						</div>
 					</li>
-					<li class="suggestDay day2 noShow"></li>
-					<li class="suggestDay day3 noShow"></li>
-					<li class="suggestDay day4 noShow"></li>
-					<li class="canvasAnimate noShow"></li>
-					<li class="lovePart noShow"></li>
+					<li id="right_card2" class="cards noShow">
+						<div class="slidebar"></div>
+						<div class="content">
+							<div class="nowSong">
+								<div class="left">
+									<img src="imgs/nowSigner.png" alt="nowSigner" />
+									<ul>
+										<li></li>
+										<li></li>
+										<li></li>
+										<li></li>
+									</ul>
+								</div>
+								<div class="right">
+									<h1>原唱：刘思涵</h1>
+									<dl>
+										<dt>专辑：<a href="">走在冷风中</a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp歌手：<a href="">刘思涵</a></dt>
+										<dd>
+											从你口中说出十分冷漠<br>难过沸腾心中然后熄灭的火<br>我以为留下来没有错<br>我以为努力过你会懂<br>怎么连落叶都在嘲笑我<br>要假装坚强的走<br>行走在冬夜的冷风中<br>飘散的踩碎的都是梦孤单单这一刻<br>...........
+										</dd>
+									</dl>
+								</div>
+							</div>
+							<div class="commontText">
+								<div>听友评论<small>(已有2510条评论)</small></div>
+								<hr width=95% size=2 color=#1C1E22 noshade>
+								<input type="text" placeholder="发表评论" readonly="readonly" />
+							</div>
+							<div class="textLists">
+								<h2>最新评论</h2>
+								<ul>
+									<li>
+										<a href="">飞燕草:</a>
+										<span>
+											这是一首有味道的歌,让人有点不知所措的感觉
+										</span>
+										<ul >
+											<li style="float:left;">11月1号</li>
+											<li class="border">赞(25525)</li>
+											<li class="border">回复(+123)</li>
+											<li class="border">分享(125)</li>
+										</ul>
+									</li>
+									<li>
+										
+										<a href="">飞燕草:</a>
+										<span>
+											这是一首有味道的歌,让人回味无穷
+										</span>
+										<ul >
+											<li style="float:left;">11月1号</li>
+											<li class="border">赞(25525)</li>
+											<li class="border">回复(+123)</li>
+											<li class="border">分享(125)</li>
+										</ul>
+									</li>
+									<li>
+										
+										<a href="">飞燕草:</a>
+										<span>
+											这是一首有味道的歌,让人回味无穷
+										</span>
+										<ul >
+											<li style="float:left;">11月1号</li>
+											<li class="border">赞(25525)</li>
+											<li class="border">回复(+123)</li>
+											<li class="border">分享(125)</li>
+										</ul>
+									</li>
+									<li>
+										
+										<a href="">飞燕草:</a>
+										<span>
+											这是一首有味道的歌,让人回味无穷
+										</span>
+										<ul>
+											<li style="float:left;">11月1号</li>
+											<li class="border">赞(25525)</li>
+											<li class="border">回复(+123)</li>
+											<li class="border">分享(125)</li>
+										</ul>
+									</li>
+								</ul>
+
+							</div>
+						</div>
+					</li>
+					<li id="right_card3" class="cards noShow"></li>
+					<li id="right_card4" class="cards noShow">
+						<div class="scrollbar"></div>
+						<div class="lovepartContent">
+							<div class="libo_world">
+								<img src="imgs/signer.png" alt="signer" width="200" height="200">
+								<div class="zz"></div>
+								<dl class="right">
+									<dt><span>歌单</span>我喜欢的音乐</dt>
+									<dd class="dd1"><span>libo_world</span> 2016年创建</dd>
+									<dd class="dd2">
+										<input type="button" value="播放全部" />
+										<input type="button" value="分享" />
+										<input type="button" value="收藏" />
+										<input type="button" value="下载全部" />
+									</dd>
+								</dl>
+							</div>
+							<table>
+								<thead>
+									<tr>
+										<th name="index">&nbsp&nbsp</th>
+										<th name="action">操作</th>
+										<th name="title">音乐标题</th>
+										<th name="signer">歌手</th>
+										<th name="time">时长</th>
+										<th name="belong">专辑</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td name="index">01</td>
+										<td name="action"></td>
+										<td name="title">童话镇</td>
+										<td name="signer">陈一发儿</td>
+										<td name="time">童话镇</td>
+										<td name="belong">04:17</td>
+									</tr>
+									<tr>
+										<td name="index">01</td>
+										<td name="action"></td>
+										<td name="title">童话镇</td>
+										<td name="signer">陈一发儿</td>
+										<td name="time">童话镇</td>
+										<td name="belong">04:17</td>
+									</tr>
+									<tr>
+										<td name="index">01</td>
+										<td name="action"></td>
+										<td name="title">童话镇</td>
+										<td name="signer">陈一发儿</td>
+										<td name="time">童话镇</td>
+										<td name="belong">04:17</td>
+									</tr>
+									<tr>
+										<td name="index">01</td>
+										<td name="action"></td>
+										<td name="title">童话镇</td>
+										<td name="signer">陈一发儿</td>
+										<td name="time">童话镇</td>
+										<td name="belong">04:17</td>
+									</tr>
+									<tr>
+										<td name="index">01</td>
+										<td name="action"></td>
+										<td name="title">童话镇</td>
+										<td name="signer">陈一发儿</td>
+										<td name="time">童话镇</td>
+										<td name="belong">04:17</td>
+									</tr>
+									<tr>
+										<td name="index">01</td>
+										<td name="action"></td>
+										<td name="title">童话镇</td>
+										<td name="signer">陈一发儿</td>
+										<td name="time">童话镇</td>
+										<td name="belong">04:17</td>
+									</tr>
+									<tr>
+										<td name="index">01</td>
+										<td name="action"></td>
+										<td name="title">童话镇</td>
+										<td name="signer">陈一发儿</td>
+										<td name="time">童话镇</td>
+										<td name="belong">04:17</td>
+									</tr>
+									<tr>
+										<td name="index">01</td>
+										<td name="action"></td>
+										<td name="title">童话镇</td>
+										<td name="signer">陈一发儿</td>
+										<td name="time">童话镇</td>
+										<td name="belong">04:17</td>
+									</tr>
+									<tr>
+										<td name="index">01</td>
+										<td name="action"></td>
+										<td name="title">童话镇</td>
+										<td name="signer">陈一发儿</td>
+										<td name="time">童话镇</td>
+										<td name="belong">04:17</td>
+									</tr>
+									<tr>
+										<td name="index">01</td>
+										<td name="action"></td>
+										<td name="title">童话镇</td>
+										<td name="signer">陈一发儿</td>
+										<td name="time">童话镇</td>
+										<td name="belong">04:17</td>
+									</tr>
+									<tr>
+										<td name="index">01</td>
+										<td name="action"></td>
+										<td name="title">童话镇</td>
+										<td name="signer">陈一发儿</td>
+										<td name="time">童话镇</td>
+										<td name="belong">04:17</td>
+									</tr>
+									<tr>
+										<td name="index">01</td>
+										<td name="action"></td>
+										<td name="title">童话镇</td>
+										<td name="signer">陈一发儿</td>
+										<td name="time">童话镇</td>
+										<td name="belong">04:17</td>
+									</tr>
+									<tr>
+										<td name="index">01</td>
+										<td name="action"></td>
+										<td name="title">童话镇</td>
+										<td name="signer">陈一发儿</td>
+										<td name="time">童话镇</td>
+										<td name="belong">04:17</td>
+									</tr>
+									<tr>
+										<td name="index">01</td>
+										<td name="action"></td>
+										<td name="title">童话镇</td>
+										<td name="signer">陈一发儿</td>
+										<td name="time">童话镇</td>
+										<td name="belong">04:17</td>
+									</tr>
+									<tr>
+										<td name="index">01</td>
+										<td name="action"></td>
+										<td name="title">童话镇</td>
+										<td name="signer">陈一发儿</td>
+										<td name="time">童话镇</td>
+										<td name="belong">04:17</td>
+									</tr>
+									<tr>
+										<td name="index">01</td>
+										<td name="action"></td>
+										<td name="title">童话镇</td>
+										<td name="signer">陈一发儿</td>
+										<td name="time">童话镇</td>
+										<td name="belong">04:17</td>
+									</tr>
+									<tr>
+										<td name="index">01</td>
+										<td name="action"></td>
+										<td name="title">童话镇</td>
+										<td name="signer">陈一发儿</td>
+										<td name="time">童话镇</td>
+										<td name="belong">04:17</td>
+									</tr>
+									<tr>
+										<td name="index">01</td>
+										<td name="action"></td>
+										<td name="title">童话镇</td>
+										<td name="signer">陈一发儿</td>
+										<td name="time">童话镇</td>
+										<td name="belong">04:17</td>
+									</tr>
+									<tr>
+										<td name="index">01</td>
+										<td name="action"></td>
+										<td name="title">童话镇</td>
+										<td name="signer">陈一发儿</td>
+										<td name="time">童话镇</td>
+										<td name="belong">04:17</td>
+									</tr>
+									<tr>
+										<td name="index">01</td>
+										<td name="action"></td>
+										<td name="title">童话镇</td>
+										<td name="signer">陈一发儿</td>
+										<td name="time">童话镇</td>
+										<td name="belong">04:17</td>
+									</tr>
+									<tr>
+										<td name="index">01</td>
+										<td name="action"></td>
+										<td name="title">童话镇</td>
+										<td name="signer">陈一发儿</td>
+										<td name="time">童话镇</td>
+										<td name="belong">04:17</td>
+									</tr>
+									<tr>
+										<td name="index">01</td>
+										<td name="action"></td>
+										<td name="title">童话镇</td>
+										<td name="signer">陈一发儿</td>
+										<td name="time">童话镇</td>
+										<td name="belong">04:17</td>
+									</tr>
+									<tr>
+										<td name="index">01</td>
+										<td name="action"></td>
+										<td name="title">童话镇</td>
+										<td name="signer">陈一发儿</td>
+										<td name="time">童话镇</td>
+										<td name="belong">04:17</td>
+									</tr>
+
+									<tr>
+										<td name="index">01</td>
+										<td name="action"></td>
+										<td name="title">童话镇</td>
+										<td name="signer">陈一发儿</td>
+										<td name="time">童话镇</td>
+										<td name="belong">04:17</td>
+									</tr>
+									<tr>
+										<td name="index">01</td>
+										<td name="action"></td>
+										<td name="title">童话镇</td>
+										<td name="signer">陈一发儿</td>
+										<td name="time">童话镇</td>
+										<td name="belong">04:17</td>
+									</tr>
+									<tr>
+										<td name="index">01</td>
+										<td name="action"></td>
+										<td name="title">童话镇</td>
+										<td name="signer">陈一发儿</td>
+										<td name="time">童话镇</td>
+										<td name="belong">04:17</td>
+									</tr>
+									<tr>
+										<td name="index">01</td>
+										<td name="action"></td>
+										<td name="title">童话镇</td>
+										<td name="signer">陈一发儿</td>
+										<td name="time">童话镇</td>
+										<td name="belong">04:17</td>
+									</tr>
+									<tr>
+										<td name="index">01</td>
+										<td name="action"></td>
+										<td name="title">童话镇</td>
+										<td name="signer">陈一发儿</td>
+										<td name="time">童话镇</td>
+										<td name="belong">04:17</td>
+									</tr>
+									<tr>
+										<td name="index">01</td>
+										<td name="action"></td>
+										<td name="title">童话镇</td>
+										<td name="signer">陈一发儿</td>
+										<td name="time">童话镇</td>
+										<td name="belong">04:17</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</li>
 				</ul>
 			</div>
 		</div>
-		<div class="footer_nav">
+		<div id="footer_nav">
 			<ul>
 				<li></li>
 			</ul>
 		</div>
+		<div id="matte">
+			<div id="comment_box">
+				<div class="header">
+					<span>添加评论(歌曲:&nbsp&nbsp&nbsp走在冷风中)</span>
+					<div class="close"></div>
+				</div>
+				<div class="textarea">
+					<textarea name="comment"></textarea>
+					<ul>
+						<li></li>
+						<li></li>
+						<li></li>
+					</ul>
+					<span>140</span>
+				</div>
+				<div class="button">
+					<input type="button" value="评论" />
+				</div>
+			</div>
+		</div>
+		
 	</div>
 	<script type="text/javascript" src="index.js">
 	</script>

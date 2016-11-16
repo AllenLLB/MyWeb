@@ -8,34 +8,39 @@ html,body{
 	width: 100%;
 	height: 100%;
 }
-img{display: block;}
+img{display: block; border: none;}
 
 #container{
-	min-width: 1010px;
-	min-height: 671px;
 
 	width: 1010px;
-	height: 671px;
+	height: 670px;
 
 	margin: 0 auto 0 auto;
 
 	box-sizing: border-box;
+
+	box-shadow:0 2px 4px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);
+
+	position: relative;	/*为评论框做准备*/
 
 }
 
 
 /*head 部分*/
 
-#container .head_nav{
-	width: 100%;
+#head_nav{
+	width: 1010px;
 	height: 50px;
 	background: #C62F2F;
+
+	/*black style test*/
+	background: #222225;
 
 	position: relative;
 }
 
 /*左边的logo*/
-#container .head_nav .logo{		/*此处不加浮动会影响下面的布局???*/
+#head_nav .logo{		/*此处不加浮动会影响下面的布局???*/
 	display: block;
 	width: 170px;
 	height: 100%;
@@ -49,7 +54,7 @@ img{display: block;}
 
 /*中间的搜索*/
 
-#container .head_nav .search{
+#head_nav .search{
 	width: 250px;
 	height: 100%;
 
@@ -57,7 +62,7 @@ img{display: block;}
 	left: 230px;
 }
 /*搜索框*/
-#container .head_nav .search input[name='search']{
+#head_nav .search input[name='search']{
 
 	box-sizing: border-box;
 
@@ -68,7 +73,7 @@ img{display: block;}
 
 	height: 22px;
 
-	background: #A82828;
+	background: #171719;
 
 	outline: none;
 
@@ -83,10 +88,12 @@ img{display: block;}
 
 	left: 28px;
 
-	text-indent: 15px;
+	text-indent: 20px;
+
+	color: #fff;
 }
 
-#container .head_nav .search input[name='btn']{
+#head_nav .search input[name='btn']{
 	
 	display: block;
 
@@ -108,27 +115,25 @@ img{display: block;}
 	cursor: pointer;
 }
 /*右边的一系列操作*/
-#container .head_nav .action{
-	width: 380px;
+#head_nav .action{
+	width: 300px;
 	height: 100%;
-	background: #ccc;
+	/*background: #ccc;*/
 
 	position: absolute;
 	right: 0;
 }
 
-#container .head_nav .action .action_style{
+#head_nav .action .action_style{
 	width: 60%;
 	height: 100%;
-	background: rgba(254,54,54,.5);
 
 	float: left;
 }
 
-#container .head_nav .action .action_style li{
+#head_nav .action .action_style li{
 	height: 70%;
 	width: 30%;
-	background: green;
 
 	float: left;
 	margin-left: 3%;
@@ -138,11 +143,20 @@ img{display: block;}
 	cursor: pointer;
 }
 
+#head_nav .action .action_style li:nth-of-type(1){
+	background: url(imgs/icon/setStyle.png) center center no-repeat;
+}
+#head_nav .action .action_style li:nth-of-type(2){
+	background: url(imgs/icon/messages.png) center center no-repeat;
+}
+#head_nav .action .action_style li:nth-of-type(3){
+	background: url(imgs/icon/set.png) center center no-repeat;
+}
 
-#container .head_nav .action .action_status{
-	width: 30%;
+#head_nav .action .action_status{
+	width: 40%;
 	height: 100%;
-	background: rgba(254,54,54,.5);
+	/*background: rgba(254,54,54,.5);*/
 
 	float: right;
 	position: relative;
@@ -151,7 +165,6 @@ img{display: block;}
 .action_status li{
 	height: 70%;
 	width: 30%;
-	background: red;
 
 	float: left;
 	margin-left: 3%;
@@ -161,12 +174,21 @@ img{display: block;}
 	cursor: pointer;
 }
 
+.action_status li:nth-of-type(1){
+	background: url(imgs/icon/small.png) no-repeat center center;
+}
+.action_status li:nth-of-type(2){
+	background: url(imgs/icon/large.png) no-repeat center center;
+}
+.action_status li:nth-of-type(3){
+	background: url(imgs/icon/close.png) no-repeat center center;
+}
+
 /*主体部分*/
 
-#container .main{
-	width: 100%;
+#main{
+	width: 1010px;
 	height: 570px;
-	min-height: 570px;
 
 
 	clear: both;
@@ -175,27 +197,31 @@ img{display: block;}
 /*主体左边的目录部分*/
 
 
-#container .main .left_nav{
+#leftPart{
+	box-sizing: border-box;
 	width: 200px;
 	height: 100%;
 
 	float: left;
-	background: #F5F5F7;
+	background: #191B1F;
 
 	position: relative;
+
+	border-right:1px solid #23262C;
+	border-bottom:1px solid #23262C;
 }
 
 
 /*左边的第一个自定义菜单*/
 
-#container .main .left_nav dl.suggest{
+#leftPart dl.suggest{
 	width: 100%;
 	height: 160px;
 
 	background: transparent;
 }
 
-.left_nav dl.suggest dt{
+#leftPart dl.suggest dt{
 	width: 100%;
 	height: 30px;
 	line-height: 30px;
@@ -203,10 +229,11 @@ img{display: block;}
 	font-size: 13px;
 	text-indent: 15px;
 
-	color: #7D7D7D;
+	color: #ADAFB2;
+
 }
 
-.left_nav dl.suggest dd{
+#leftPart dl.suggest dd{
 	box-sizing: border-box;
 	width: 100%;
 	height: 30px;
@@ -216,20 +243,66 @@ img{display: block;}
 	text-indent: 55px;
 	font-size: 13px;
 
-	color: #5C5C5C;
+	color: #ADAFB2;
 
 	border-left: 4px solid transparent;
+}
+
+#leftPart dl.suggest dd:nth-of-type(1){
+	background: url(imgs/icon/music.png) no-repeat 25px center;
+}
+#leftPart dl.suggest dd:nth-of-type(2){
+	background: url(imgs/icon/person.png) no-repeat 25px center;
+}
+#leftPart dl.suggest dd:nth-of-type(3){
+	background: url(imgs/icon/mv.png) no-repeat 25px center;
+}
+#leftPart dl.suggest dd:nth-of-type(4){
+	background: url(imgs/icon/friend.png) no-repeat 25px center;
+}
+
+#leftPart dl.suggest dd:nth-of-type(1):hover{
+	background: #27282C url(imgs/icon/music.png) no-repeat 25px center;
+	cursor: pointer;
+
+	color: #fff;
+
+	border-left: 4px solid #C62F2F;
+}
+#leftPart dl.suggest dd:nth-of-type(2):hover{
+	background: #27282C url(imgs/icon/person.png) no-repeat 25px center;
+	cursor: pointer;
+
+	color: #fff;
+
+	border-left: 4px solid #C62F2F;
+}
+#leftPart dl.suggest dd:nth-of-type(3):hover{
+	background: #27282C url(imgs/icon/mv.png) no-repeat 25px center;
+	cursor: pointer;
+
+	color: #fff;
+
+	border-left: 4px solid #C62F2F;
+}
+#leftPart dl.suggest dd:nth-of-type(4):hover{
+	background: #27282C url(imgs/icon/friend.png) no-repeat 25px center;
+	cursor: pointer;
+
+	color: #fff;
+
+	border-left: 4px solid #C62F2F;
 }
 
 /*左边的第二个自定义菜单*/
 
-#container .main .left_nav dl.mine{
+#leftPart dl.mine{
 	width: 100%;
 	height: 160px;
 	background: transparent;
 }
 
-.left_nav dl.mine dt{
+#leftPart dl.mine dt{
 	width: 100%;
 	height: 30px;
 	line-height: 30px;
@@ -237,10 +310,10 @@ img{display: block;}
 	font-size: 13px;
 	text-indent: 15px;
 
-	color: #7D7D7D;
+	color: #ADAFB2;
 }
 
-.left_nav dl.mine dd{
+#leftPart dl.mine dd{
 	box-sizing: border-box;
 	width: 100%;
 	height: 30px;
@@ -249,12 +322,58 @@ img{display: block;}
 	text-indent: 55px;
 
 	font-size: 13px;
-	color: #5C5C5C;
+	color: #ADAFB2;
 	border-left: 4px solid transparent;
 }
 
+#leftPart dl.mine dd:nth-of-type(1){
+	background: url(imgs/icon/localMusic.png) no-repeat 25px center;
+}
+#leftPart dl.mine dd:nth-of-type(2){
+	background: url(imgs/icon/down.png) no-repeat 25px center;
+}
+#leftPart dl.mine dd:nth-of-type(3){
+	background: url(imgs/icon/myMusic.png) no-repeat 25px center;
+}
+#leftPart dl.mine dd:nth-of-type(4){
+	background: url(imgs/icon/mySigner.png) no-repeat 25px center;
+}
+
+#leftPart dl.mine dd:nth-of-type(1):hover{
+	background: #27282C url(imgs/icon/localMusic.png) no-repeat 25px center;
+	cursor: pointer;
+
+	color: #fff;
+
+	border-left: 4px solid #C62F2F;
+}
+#leftPart dl.mine dd:nth-of-type(2):hover{
+	background: #27282C url(imgs/icon/down.png) no-repeat 25px center;
+	cursor: pointer;
+
+	color: #fff;
+
+	border-left: 4px solid #C62F2F;
+}
+#leftPart dl.mine dd:nth-of-type(3):hover{
+	background: #27282C url(imgs/icon/myMusic.png) no-repeat 25px center;
+	cursor: pointer;
+
+	color: #fff;
+
+	border-left: 4px solid #C62F2F;
+}
+#leftPart dl.mine dd:nth-of-type(4):hover{
+	background: #27282C url(imgs/icon/mySigner.png) no-repeat 25px center;
+	cursor: pointer;
+
+	color: #fff;
+
+	border-left: 4px solid #C62F2F;
+}
+
 /*左边的第三个自定义菜单*/
-#container .main .left_nav dl.song_list{
+#leftPart dl.song_list{
 	width: 100%;
 	height: 70px;
 
@@ -262,18 +381,19 @@ img{display: block;}
 
 }
 
-.left_nav dl.song_list dt{
+#leftPart dl.song_list dt{
 	width: 100%;
 	height: 30px;
 	line-height: 30px;
 
 	font-size: 13px;
+
 	text-indent: 15px;
 
-	color: #7D7D7D;
+	color: #ADAFB2;
 }
 
-.left_nav dl.song_list dd{
+#leftPart dl.song_list dd{
 	box-sizing: border-box;
 	width: 100%;
 	height: 30px;
@@ -283,19 +403,22 @@ img{display: block;}
 
 	font-size: 13px;
 
-	color: #5C5C5C;
+	color: #ADAFB2;
 
 	border-left: 4px solid transparent;
 }
 
-.left_nav dl.song_list dd:hover,.left_nav dl.suggest dd:hover,.left_nav dl.mine dd:hover{
+#leftPart dl.song_list dd{
+	background: url(imgs/icon/mylove.png) no-repeat 25px center;
+}
+#leftPart dl.song_list dd:hover{
+	background: #27282C url(imgs/icon/mylove.png) no-repeat 25px center;
 	cursor: pointer;
 
-	color: black;
+	color: #fff;
 
 	border-left: 4px solid #C62F2F;
 
-	background: #E8E9EC;
 }
 
 
@@ -305,11 +428,11 @@ img{display: block;}
 
 
 /*左下角的播放的部分*/
-#container .main .left_nav .now_play{
+#leftPart .now_play{
 	width: 100%;
 	height: 59px;
 
-	border-top: 1px solid #E1E1E2;
+	border-top: 1px solid #23262C;
 	position: absolute;
 
 	bottom: 0;
@@ -317,47 +440,50 @@ img{display: block;}
 	background: transparent;
 }
 
+
 /*主体右边的内容部分*/
-#container .main .right_content{
+#rightPart{
 	width: 810px;
-	height: 100%;
-		
-	min-width: 810px;	
+	height: 570px;
+	
 
 	float: left;
-	background: green;
 }
 
-#container .main .right_content .right_con{
+#rightMain{
 	width: 810px;
-	height: 100%;	
+	height: 570px;	
+
+	overflow: hidden;
+
+	position: relative;
+}
+
+
+#rightMain>li{	/*#的级别太高会影响下面的继承*/
+	width: 810px;
+	height: 570px;	
 
 	overflow: hidden;
 }
 
-
-.main .right_content>.right_con li{
-	width: 810px;
-	height: 100%;	
-}
-
 /*对每一个作为选项卡的li进行单独的设计*/
 
-/*li1*/
-.main .right_content>.right_con li.day1{
-		background: blue;
-
+/*card1*/
+#rightMain #right_card1{
+		background: #16181C;
 		overflow:hidden;	/*作用是取消margin合并*/
 }
 
 /*/第一部分 总高度是570 */
-.right_con li.day1>.findMusic_nav{	/*50px*/
-	border-bottom: 1px solid #ccc;
+#right_card1 .navs{	/*50px*/
+	border-bottom: 1px solid #212327;
 	width: 90%;
 	height: 40px;
-	margin: 2px auto 18px auto;
+	margin: 2px auto 17px auto;
 }
-.right_con li.day1>.findMusic_nav li{
+
+#right_card1 .navs>li{
 	width: auto;
 	height: 100%;
 	line-height: 40px;
@@ -372,37 +498,41 @@ img{display: block;}
 
 	cursor: pointer;
 
-	color: #000;
+	color: #828385;
 
 	font-size: 14px;
 }
-.right_con li.day1>.findMusic_nav li:hover{
-	color: red;
+#right_card1 .navs li:hover{
+	color: #fff;
 }
+
 /*这里是选项卡的第一部分的设置 宽度是729px*/
-.right_con li.day1> .personal{
+#right_card1 .tab_1{
+
+	box-sizing: border-box;
 	width:90%;
 	height: 519px;
-	background: #ccc;
 
 	margin: 0 auto 0 auto;
 
-	display: none;
+
 }
 
 
 /*设置幻灯片区域的大小*/
-.right_con li.day1> .personal>.carousel{
+#right_card1 .tab_1 .carousel{
 	width: 729px;
 	height: 200px;
 
 	position: relative;		/*为了按钮*/
+
+	margin-bottom: 25px;
 }
-.personal>.carousel ul.poster-list{
+.tab_1 .carousel ul.poster-list{
 	width: 729px;
 	height: 200px;
 }
-.personal>.carousel .poster-list li.poster-item{
+.tab_1 .carousel .poster-list li.poster-item{
 	/*width: 540px;
 	height: 200px;*/
 	position: absolute;
@@ -410,7 +540,7 @@ img{display: block;}
 	top: 0;
 }
 
-.personal>.carousel .poster-btn{
+.tab_1 .carousel .poster-btn{
 	position: absolute;
 	top: 0;
 	width: 100px;
@@ -419,87 +549,161 @@ img{display: block;}
 	cursor: pointer;
 	opacity: .8;
 }
-.personal>.carousel .poster-prev-btn{
+.tab_1 .carousel .poster-prev-btn{
 	left: 0;
 	background: url(../../Fpics/btn_l.png) center center no-repeat;
 }
 
-.personal>.carousel .poster-next-btn{
+.tab_1 .carousel .poster-next-btn{
 	right: 0;
 	background: url(../../Fpics/btn_r.png) center center no-repeat;
 }
 
 /*幻灯片设置完毕*/
 
-.right_con li.day1> .personal>.arts{
+#right_card1 .tab_1 .arts{
 	box-sizing: border-box;
 
 	width: 100%;
-	height: 260px;
+	height: 285px;
 
 	padding-top: 10px;
 
-	background: green;
+	/*background: green;*/
 
 	color:#000;
 }
-.right_con li.day1> .personal>.arts h2{
-	line-height: 25px;
+#right_card1 .tab_1 .arts h2{
+
+	height: 35px;
+	line-height: 30px;
+
+	border-bottom: 1px solid #E1E1E2;
 
 	font-size: 18px;
+
+	color: #fff;
 }
 
-.right_con li.day1> .personal>.arts>ul{
+#right_card1 .tab_1 .arts>ul{
 	width: 100%;
-	height: 150px;
-	margin-top: 30px;
+	height: 200px;
+	margin-top: 15px;
 }
 
-.right_con li.day1> .personal>.arts>ul li{
-	width: 130px;
-	height: 150px;
-	background: black;
+#right_card1 .tab_1 .arts>ul li{
+	width: 220px;
+	height: 200px;
+
+	margin-left: 17px;
 	float: left;
+
+	box-shadow:0 2px 4px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);
+
+	position: relative;
+
+	cursor: pointer;
+
+	overflow: hidden;
+
 }
 
-.right_con li.day1> .styles{
+#right_card1 .tab_1 .arts>ul li span{
+	box-sizing: border-box;
+	width: 100%;
+	height: 25px;
+	line-height: 25px;
+	background: rgba(43,48,59,.15);
+	position: absolute;
+
+	top: 0;
+
+	font-size: 14px;
+	font-weight: 400;
+	color: #fff;
+
+	text-align: right;
+
+	padding-right: 6px;
+}
+
+#right_card1 .tab_1 .arts>ul li p{
+	box-sizing: border-box;
+	width: 100%;
+	height: 60px;
+
+	background: rgba(43,48,59,.45);
+
+	position: absolute;
+
+	top: -60px;
+	left: 0;
+
+	padding: 15px;
+
+	letter-spacing: 2px;
+
+	text-indent: 10px;
+
+	color: #fff;
+
+	font-size: 12px;
+
+}
+
+#right_card1 .tab_2{
+	box-sizing: border-box;
+
 	width:90%;
 	height: 519px;
-	background: #fff;
 
 	margin: 0 auto 0 auto;
 
-	display: block;	/*作为隐藏的选项卡*/
 
 	position: relative;	/*为后面的自定义滚动条做准备*/
+
+	overflow:hidden;	/*取消子类margin对父类的影响*/
+
+	border-right:1px solid #212327;
 }
 
 /*设置预加载图片的目录*/
-.right_con li.day1> .styles .signersNav{
-	width: 100%;
-	height: 35px;
+#right_card1 .tab_2 .signersNav{
+	width: 96%;
+	height: 12px;
+	margin-left: 4%;
+	margin-top: 25px;
 
+	margin-bottom: 25px;
 }
 
 /*设置预加载图片的目录*/
-.right_con li.day1> .styles .signersNav li{
+#right_card1 .tab_2 .signersNav li{
 	width: auto;
-	height: 35px;
-	line-height: 35px;
+	height: 12px;
+	line-height: 12px;
 
 	float: left;
 
-	padding-left: 10px;
+	padding: 0 12px 0 12px;
 
-	background: #ccc;
+	border-right: 1px solid #282930;
 }
 
-.right_con li.day1 .styles .signers{/*可滑动区域是519-55的显示区域的大小*/
-	
+#right_card1 .tab_2 .signersNav li:first-child{
+	padding: 0;
+
+	color: #fff;
+
+	font-size: 14px;
+	border:none;
+}
+
+#right_card1 .tab_2 .signers{/*可滑动区域是519-55的显示区域的大小*/
+
 	height: 474px;
 
 	width: 96%;
-	background: #435B3E;
 
 	clear: both;
 
@@ -508,17 +712,40 @@ img{display: block;}
 
 }
 
-.right_con li.day1 .styles .signers p{
-	height: auto;
+#right_card1 .tab_2 .signers .signerlists{
+	width: 100%;		/*700px*/
+	height: 1000px;
+
+
 	position: absolute;
+
 	top: 0;
+	left: 0;
+
+	overflow: hidden;
+
 }
 
-.right_con li.day1 .styles .slideBar{
+.tab_2 .signers ul li{
+	width: 140px;
+	height: 140px;
+
+	float: left;
+
+	margin-left: 28px;
+
+	margin-bottom: 20px;
+}
+.tab_2 .signers ul.signerlists>li img{
+	width: 100%;
+	height: 100%;
+}
+
+#right_card1 .tab_2 .slideBar{
 	width: 10px;
 	height: 55px;
 
-	background: #EF5656;
+	background: #2C2E32;
 
 	position: absolute;
 
@@ -529,38 +756,570 @@ img{display: block;}
 	border-radius: 10px;
 	-webkit-border-radius: 10px;
 	-moz-border-radius: 10px;
-	-ms-border-radius: 10px;
 }
+
 
 /*2*/
-.main .right_content>.right_con li.day2{
-		background: red;
+/*now left menu part2 content*/
+#rightMain #right_card2{	/*width: 810px;height: 100%--570;*/
+		background: #16181C;
+		position: relative;
+
+		overflow: hidden;
 }
 
-/*3*/
-.main .right_content>.right_con li.day3{
-		background: yellow;
+/*右边下拉滚动条*/
+#right_card2 .slidebar{
+	width: 10px;
+	height: 55px;
+
+	background: #2C2E32;
+
+	position: absolute;
+
+	right: 0;
+	top: 0;
+
+	z-index: 10;
+
+	/*设置圆角*/
+	border-radius: 10px;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
 }
 
-/*4*/
-.main .right_content>.right_con li.day4{
-		background: #ccc;
+/*右边的内容总区域*/
+#right_card2 .content{
+	width: 96%;
+
+	height: 985px;
+
+	position: absolute;
+
+	left: 2%;
+	top: 0;
+	
+	overflow: hidden;	/*取消下面margin的影响*/
 }
+
+#right_card2 .content .nowSong{
+	width: 100%;
+	height: 400px;
+
+	overflow: hidden;	/*取消下面margin的影响*/
+}
+
+#right_card2 .content .nowSong .left{
+	width: 50%;
+	height: 100%;
+
+	float: left;
+
+	position: relative;
+}
+
+
+/*left*/
+#right_card2 .nowSong .left img{
+	position: absolute;
+	right: 0;
+
+	top: 25px;
+
+	box-shadow:0 2px 4px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);
+
+}
+
+#right_card2 .nowSong .left ul{
+	position: absolute;
+
+	width: 300px;
+
+	height: 45px;
+
+	right: 0;
+	bottom: 15px;
+}
+
+#right_card2 .nowSong .left ul li{
+	width: 45px;
+	height: 45px;
+
+	float: left;
+
+	margin-right: 35px;
+
+
+	-webkit-border-radius:22px;
+	-moz-border-radius:22px;
+	-ms-border-radius:22px;
+		border-radius:22px;
+}
+#right_card2 .nowSong .left ul li:nth-of-type(1){
+	background: url(imgs/icon/dd.png);
+}
+#right_card2 .nowSong .left ul li:nth-of-type(2){
+	background: url(imgs/icon/lovemis.png);
+}
+#right_card2 .nowSong .left ul li:nth-of-type(3){
+	background: url(imgs/icon/delete.png);
+}
+#right_card2 .nowSong .left ul li:nth-of-type(4){
+	background: url(imgs/icon/next.png);
+}
+
+#right_card2 .nowSong .left ul li:first-child{
+	margin-left: 5px;
+}
+
+#right_card2 .nowSong .left ul li:last-child{
+	margin: 0;
+}
+
+#right_card2 .content .nowSong .right{
+	box-sizing: border-box;
+	width: 50%;
+	height: 100%;
+	float: left;
+
+	position: relative;
+
+	padding-left: 30px;
+	padding-right: 30px;
+
+	padding-top: 15px;
+}
+
+#right_card2 .content .nowSong .right h1{
+	font-size: 14px;
+	margin-top: 8px;
+
+	color: #fff;
+}
+
+#right_card2 .nowSong .right dl{
+	margin-top: 10px;
+
+}
+#right_card2 .nowSong .right dl a{
+	text-decoration: none;
+	color: #28568A;
+}
+#right_card2 .nowSong .right dl dt{
+	font-size: 10px;
+	margin-bottom: 10px;
+	color: #fff;
+}
+
+#right_card2 .nowSong .right dl dd{
+	box-sizing: border-box;
+	line-height: 30px;
+
+	font-size: 14px;
+
+	padding: 5px 85px 5px 25px;
+}
+
+#right_card2 .content .commontText{
+	width: 100%;
+	height: 100px;
+
+	position: relative;
+
+	margin-top: 85px;
+
+	margin-bottom: 20px;
+}
+
+#right_card2 .content .commontText div{
+
+	height: 20px;
+
+	line-height: 20px;
+	font-size: 17px;
+
+	font-weight: 400;
+
+	text-indent: 25px;
+
+	color: #fff;
+}
+#right_card2 .content .commontText div small{
+	font-size:12px;
+
+	margin-left: 10px;
+
+	color: #4E4E52;
+}
+
+#right_card2 .content .commontText input[type='text']{
+
+	width: 92%;
+	height: 25px;
+
+	border: 12px solid #1C1E23;
+
+	background: #2B2D32 url(imgs/icon/twobackground.png) 660px center no-repeat;
+
+
+
+	margin:5px 5px 5px 22px;
+
+	padding: 5px 0 5px 0;
+	text-indent: 15px;
+
+	outline: none;
+}
+
+#right_card2 .content .textLists{
+	width: 100%;
+	height: 600px;
+
+
+	overflow: hidden;	/*取消对下面的margin的影响*/
+}
+
+#right_card2 .content .textLists h2{
+	height: 20px;
+	margin:10px 0 10px 0;
+	font-size: 15px;
+
+	text-indent: 25px;
+}
+
+#right_card2 .content .textLists>ul{
+	width: 100%;
+}
+#right_card2 .content .textLists>ul>li{
+	box-sizing: border-box;
+	border-top: 1px solid #1C1E22;
+
+	width: 95%;
+	height: 80px;
+
+	margin: 0 auto 0 auto;
+
+	background: url(imgs/header.png) no-repeat 0 center;
+
+	padding-top: 18px;
+
+	text-indent: 50px;
+
+	position: relative;
+}
+#right_card2 .content .textLists>ul>li>span{
+	color: #fff;
+}
+#right_card2 .content .textLists>ul>li>a{
+	text-decoration: none;
+	color: #28568A;
+}
+#right_card2 .content .textLists>ul>li>ul{
+	width: 80%;
+	height: 25px;
+	text-indent: 0;
+
+	margin-left: 50px;
+
+	margin-top: 5px;
+}
+
+#right_card2 .content .textLists>ul>li>ul>li{
+	width: auto;
+	height: 15px;
+	line-height: 15px;
+	float: right;
+	margin-top: 5px;
+
+	color: #4E4E52;
+	cursor: pointer;
+}
+#right_card2 .content .textLists>ul>li>ul>li:hover{
+	color: #ADAFB2;
+}
+#right_card2 .content .textLists>ul>li>ul>li.border{
+	margin-right: 10px;
+
+	padding-right: 10px;
+
+	border-right: 1px solid #282930;
+}
+
+
+
 
 /*5*/
-.main .right_content>.right_con li.canvasAnimate{
+#rightMain #right_card3{
 		background: black;
+
+		overflow: hidden;
 }
 
 
 /*6*/
 
-.main .right_content>.right_con li.lovePart{
-		background: #ccc;
+#rightMain #right_card4{
+	background: #16181C;
+
+	overflow: hidden;
+
+	position: relative;
+}
+
+/*这部分的滚动条*/
+#right_card4 .scrollbar{
+	width: 10px;
+	height: 75px;
+
+	background: #2D2F32;
+
+	position: absolute;
+
+	right: 0;
+	top: 0;
+
+	z-index: 10;
+
+	/*设置圆角*/
+	border-radius: 10px;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+}
+
+/*这部分需要滚动的区域*/
+#right_card4 .lovepartContent{
+	width: 96%;
+	height: 1000px;
+
+
+	position: absolute;
+
+	left: 2%;
+	top: 0;
+
+	overflow: hidden;	/*取消后面的margin带来的影响*/
 }
 
 
-.main .right_content>.right_con li.noShow{
+/*right_card4 content*/
+#right_card4 .lovepartContent .libo_world{
+	width: 100%;
+
+	height: 260px;
+
+	position: relative;
+
+}
+
+#right_card4 .lovepartContent .libo_world img{
+	display: block;
+	position: absolute;
+
+	top: 25px;
+
+	left: 25px;
+}
+
+#right_card4 .lovepartContent .libo_world .zz{
+	width: 200px;
+	height: 200px;
+	position: absolute;
+
+	top: 25px;
+
+	left: 25px;
+
+	z-index: 5;
+
+	background: rgba(72,76,76,.4);
+}
+
+#right_card4 .lovepartContent .libo_world .right{
+	width: 450px;
+
+	height: 200px;
+
+	position: absolute;
+	top: 25px;
+	left: 265px;
+
+}
+
+
+#right_card4 .libo_world .right dt{
+	height: 22px;
+	font-size: 22px;
+	line-height: 22px;
+	font-weight: bold;
+	margin-bottom: 10px;
+	color: #DCDDE4;
+
+}
+
+#right_card4 .libo_world .right dt span{
+	font-size: 12px;
+
+	color: #fff;
+	padding: 5px 10px 5px 10px;
+
+	margin: -8px 8px 0 10px;
+
+	background: #C62F2F;
+
+	-webkit-border-radius:5px;
+	-moz-border-radius:5px;
+	-ms-border-radius:5px;
+		border-radius: 5px;
+}
+
+#right_card4 .libo_world .right dd.dd1{	/*注意：竟然不能识别伪类*/
+	color: #4F5F53;
+
+	height: 30px;
+	line-height: 30px;
+
+	text-indent: 45px;
+	margin-bottom: 20px;
+
+	background: url(imgs/libo.png) no-repeat 8px center;
+}
+#right_card4 .libo_world .right dd.dd1 span{
+	color:#ADAFB2;
+	font-size: 14px;
+
+	padding-right: 6px;
+
+	cursor: pointer;
+}
+
+#right_card4 .libo_world .right dd.dd1 span:hover{
+	color: #fff;
+}
+
+#right_card4 .libo_world .right dd.dd2{
+	margin: 0;
+}
+
+#right_card4 .right dd.dd2 input{
+	outline: none;
+
+	border: none;
+
+	border-radius: 3px;
+
+	padding: 5px 15px 5px 25px;
+
+	background: #25272B;
+
+	margin-right: 10px;
+
+	color: #585A5F;
+
+	cursor: pointer;
+}
+/*单独设置背景图标*/
+#right_card4 .right dd.dd2 input:nth-of-type(1){
+	background: #25272B url(imgs/icon/cardAll.png) 7px center no-repeat;
+}
+#right_card4 .right dd.dd2 input:nth-of-type(2){
+	background: #25272B url(imgs/icon/card4Add.png) 7px center no-repeat;
+}
+#right_card4 .right dd.dd2 input:nth-of-type(3){
+	background: #25272B url(imgs/icon/cardfx.png) 7px center no-repeat;
+}
+#right_card4 .right dd.dd2 input:nth-of-type(4){
+	background: #25272B url(imgs/icon/cardDown.png) 7px center no-repeat;
+}
+
+
+#right_card4 .right dd.dd2 input:hover{
+	color: #eee;
+}
+
+
+#right_card4 .lovepartContent table{
+	margin-top: 25px;
+
+	border-top: 1px solid red;
+
+	color: #ADAFB2;
+}
+
+
+/*为了精确对th进行单独的设置*/
+#right_card4 .lovepartContent table th{
+	border-right: 1px solid #23262C;
+}
+
+#right_card4 .lovepartContent table th[name="index"],td[name="index"]{
+	width: 50px;
+	text-align:left;
+	text-indent: 10px;
+
+	height: 30px;
+	line-height: 30px;
+}
+
+#right_card4 .lovepartContent table th[name="action"],td[name="action"]{
+	width: 60px;
+	text-align:left;
+	text-indent: 10px;
+	height: 30px;
+	line-height: 30px;
+}
+#right_card4 .lovepartContent table td[name="action"]{
+	cursor: pointer;
+	background: url(imgs/icon/actionlove.png) 10px center no-repeat,url(imgs/icon/actiondown.png) 30px center no-repeat;
+}
+#right_card4 .lovepartContent table th[name="title"],td[name="title"]{
+	width: 260px;
+	text-align:left;
+	text-indent: 10px;
+	height: 30px;
+	line-height: 30px;
+}
+#right_card4 .lovepartContent table th[name="signer"],td[name="signer"]{
+	width: 190px;
+	text-align:left;
+	text-indent: 10px;
+	height: 30px;
+	line-height: 30px;
+}
+#right_card4 .lovepartContent table th[name="time"],td[name="time"]{
+	width: 170px;
+	text-align:left;
+	text-indent: 10px;
+	height: 30px;
+	line-height: 30px;
+}
+#right_card4 .lovepartContent table th[name="belong"],td[name="belong"]{
+	width: 80px;
+	text-align:left;
+	text-indent: 10px;
+	height: 30px;
+	line-height: 30px;
+
+	border: none;
+}
+
+/*隔行变色*/
+#right_card4 .lovepartContent table tr:nth-of-type(odd){
+	background: #16181C;
+}
+
+#right_card4 .lovepartContent table tr:nth-of-type(even){
+	background: #242629;
+}
+
+#right_card4 .lovepartContent table tr:hover{
+	background: #26272B;
+
+	color: #fff;
+}
+
+
+
+.noShow{
 	display: none;
 }
 
@@ -568,10 +1327,198 @@ img{display: block;}
 
 /*底部音乐播放部分*/
 
-#container .footer_nav{
+#footer_nav{
 	width: 100%;
 	height: 50px;
-	min-height: 50px;
 
 	background: #E56AFF;
+}
+
+#matte{
+	width: 100%;
+	height: 100%;
+	background: transparent;
+
+	position: absolute;
+	top: 0;
+	left: 0;
+
+	z-index: 11;
+
+	display: none;
+}
+
+#comment_box{
+	width: 475px;
+
+	height: 278px;
+
+	background: #2D2F33;
+	position: absolute;
+
+	top: 200px;
+
+	left: 280px;
+
+	z-index: 12;
+
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+	display: none;
+}
+
+#comment_box .header{
+	box-sizing: border-box;
+
+	height: 53px;
+
+	width: 100%;
+	border-bottom: 1px solid #3B3A3D;
+
+	position: relative;
+
+	cursor: move;
+
+}
+
+#comment_box .header span{
+	height: 53px;
+	width: auto;
+	line-height: 53px;
+
+	padding-left: 25px;
+
+	font-size: 16px;
+	font-weight: bold;
+	color: #A3A5A7;
+
+}
+
+#comment_box .header .close{
+	width: 10px;
+	height: 53px;
+	background: url(imgs/closeComment.png) center center no-repeat;
+
+	position: absolute;
+
+	right: 15px;
+	top: 0;
+
+	cursor: pointer;
+
+
+}
+
+#comment_box .textarea{
+	box-sizing: border-box;
+
+	height: 168px;
+	width: 100%;
+	border-bottom: 1px solid #3B3A3D;
+
+	position: relative;
+}
+
+#comment_box .textarea textarea{
+	box-sizing: border-box;
+	width: 430px;
+	height: 102px;
+
+	resize: none;
+
+	outline: none;
+
+	padding: 10px;
+
+	border:1px solid #3B3A3D;
+
+	position: absolute;
+
+	top: 21px;
+	left: 21px;
+	background: #292B2F;
+	color: #fff;
+}
+
+#comment_box .textarea span{
+	width: 35px;
+	height: 20px;
+	line-height: 20px;
+	text-align: center;
+
+	position: absolute;
+
+	bottom: 20px;
+	right: 27px;
+
+	color: #A7A7A7;
+}
+
+#comment_box .textarea ul{
+	width: 97px;
+	height: 20px;
+	position: absolute;
+
+	bottom: 20px;
+	left: 27px;
+}
+
+#comment_box .textarea ul li{
+	text-align: center;
+	width: 24px;
+	height: 20px;
+	line-height: 20px;
+
+	display: block;
+
+	float: left;
+	margin-left: 5px;
+
+	background: pink;
+}
+#comment_box .textarea ul li:nth-of-type(1){
+	background: url(imgs/icon/comment@.png) center center no-repeat;
+}
+#comment_box .textarea ul li:nth-of-type(2){
+	background: url(imgs/icon/commentS.png) center center no-repeat;
+}
+#comment_box .textarea ul li:nth-of-type(3){
+	background: url(imgs/icon/commentX.png) center center no-repeat;
+}
+
+#comment_box .button{
+	box-sizing: border-box;
+
+	height: 57px;
+
+	width: 100%;
+
+	position: relative;
+}
+#comment_box .button input{
+	width: 80px;
+	height: 30px;
+
+	background: #0C73C2;
+
+	border:none;
+
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	-ms-border-radius: 5px;
+	border-radius: 5px;
+	outline: none;
+
+	cursor: pointer;
+
+	position: absolute;
+
+	bottom: 14px;
+	right: 20px;
+
+	color: #fff;
+}
+
+#comment_box .button input:hover{
+	background: #1167A8;
 }
