@@ -270,6 +270,12 @@ $(function(){
 	//test
 	(function(){
 
+		//评论输入区域
+		var oText=document.querySelector("textarea[name='comment']");
+
+		//取得字数变化的span
+
+		var oNum = document.querySelector(".textarea span");
 
 		$("#comment_box .button").click(function(){
 
@@ -285,7 +291,31 @@ $(function(){
 
 			$("#comment_box .close").click();
 
+			oNum.innerHTML = 140;
+			oText.value = "";
+
 		});
+
+
+		//给评论框设置change事件
+		oText.onfocus=function(){
+			var self = this;
+			var number = parseInt(oNum.innerHTML);
+			var nNewNum = number;
+			document.onkeydown=function(e){
+				var oE = e || window.event;
+
+				nNewNum =number - parseInt(self.value.length); 
+
+				if(nNewNum < 0){
+					nNewNum = 0;
+				}
+
+				oNum.innerHTML = nNewNum;
+
+			}
+		}
+		
 	}());
 
 });
