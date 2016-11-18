@@ -51,6 +51,8 @@ body,html{
 
 /*对每一个应用单独设计*/
 
+
+/*puzzle*/
 #container>ul.index-lists li.puzzle{
 	background: transparent url(../Fpics/Puzzle.png) no-repeat;
 
@@ -61,10 +63,24 @@ body,html{
 	font-size: 13px;
 }
 
+/*music*/
+#container>ul.index-lists li.music{
+	background: transparent url(../Fpics/music.png) no-repeat;
+}
+
+/*baidu*/
+#container>ul.index-lists li.baidu{
+	background: transparent url(../Fpics/baidu.png) no-repeat;
+}
+
 /*mouseover之后的应用的样式*/
 #container>ul.index-lists li[name="active"]{
 	border: 1px dashed #ccc;
 }
+
+
+
+
 
 
 
@@ -123,6 +139,8 @@ body,html{
 	cursor:pointer;
 }
 
+
+/*puzzle*/
 /*对每一个li进行单独的设计*/
 .artLists>ul.side-lists li.puzzle{
 	background: transparent url(../Fpics/PuzzleLi.png) 15px 0 no-repeat;
@@ -131,6 +149,31 @@ body,html{
 }
 .artLists>ul.side-lists li.puzzle:hover{
 	background: rgba(137,147,162,.5) url(../Fpics/PuzzleLi.png) 15px 0 no-repeat;
+
+}
+
+
+/*music*/
+
+.artLists>ul.side-lists li.music{
+	background: transparent url(../Fpics/musicLi.png) 17px 0 no-repeat;
+
+	text-indent: 80px;
+}
+.artLists>ul.side-lists li.music:hover{
+	background: rgba(137,147,162,.5) url(../Fpics/musicLi.png) 17px 0 no-repeat;
+
+}
+
+/*baidu*/
+
+.artLists>ul.side-lists li.baidu{
+	background: transparent url(../Fpics/baiduLi.png) 17px 0 no-repeat;
+
+	text-indent: 80px;
+}
+.artLists>ul.side-lists li.baidu:hover{
+	background: rgba(137,147,162,.5) url(../Fpics/baiduLi.png) 17px 0 no-repeat;
 
 }
 
@@ -197,6 +240,8 @@ body,html{
 }
 
 /*对每一个子项进行单独的设计*/
+
+/*puzzle*/
 .main .show-win .win-lists li.puzzle{
 	width: 150px;
 	height: 150px;
@@ -211,6 +256,44 @@ body,html{
 	border: 2px solid #ccc;
 
 	background: url(../Fpics/PuzzleBig.png) no-repeat;
+}
+
+/*music*/
+
+
+.main .show-win .win-lists li.music{
+	width: 150px;
+	height: 150px;
+	border: 2px solid transparent;
+	background: url(../Fpics/musicBig.png) no-repeat;
+	float: left;
+	margin: 30px;
+
+	color: #000;
+}
+.main .show-win .win-lists li.music:hover{
+	border: 2px solid #ccc;
+
+	background: url(../Fpics/musicBig.png) no-repeat;
+}
+
+
+/*music*/
+
+.main .show-win .win-lists li.baidu{
+	width: 150px;
+	height: 150px;
+	border: 2px solid transparent;
+	background: url(../Fpics/baiduBig.png) no-repeat;
+	float: left;
+	margin: 30px;
+
+	color: #000;
+}
+.main .show-win .win-lists li.baidu:hover{
+	border: 2px solid #ccc;
+
+	background: url(../Fpics/baiduBig.png) no-repeat;
 }
 
 
@@ -277,6 +360,7 @@ body,html{
 	
 
 	border: 1px solid transparent;
+
 
 
 }
