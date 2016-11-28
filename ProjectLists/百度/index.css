@@ -88,7 +88,7 @@ img{display: block; border: none;}
 .nav .slide1>ul{
 	position: absolute;
 
-	top: 25px;
+	top: 35px;
 	right: 70px;
 
 	background: #fff;
@@ -102,6 +102,18 @@ img{display: block; border: none;}
 	padding: 5px 15px;
 
 	color: #000;
+}
+.nav .slide1>ul li:first-child:before{
+	content: "";
+	width: 0;
+	height: 0;
+	border-left: 9px solid transparent;
+	border-right: 9px solid transparent;
+	border-bottom: 15px solid #fff;
+	position: absolute;
+
+	top: -15px;
+	left: 30px;
 }
 
 
