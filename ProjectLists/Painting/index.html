@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Painting</title>
+	<link rel="stylesheet" type="text/css" href="index.css" />
+	<script type="text/javascript" src="../../Fjs/jquery-1.8.3.min.js"></script>
+</head>
+<body>
+	<div id="container">
+		<div id="menu">menu</div>
+		<ul id="nav">
+			<li class="close">exit</li>
+			<li class="setting">setting</li>
+			<li class="eraser">eraser</li>
+		</ul>
+		<div class="penSet">
+  			<div class="closePanel"></div>
+			<div class="contain">
+				<ul class="boxBgLists">
+					<li color-data='{
+					"color":"#fff"
+					}'></li>
+					<li color-data='{
+					"color":"#DD4944"
+					}'></li>
+					<li color-data='{
+					"color":"#E98FB6"
+					}'></li>
+					<li color-data='{
+					"color":"#8BC9E8"
+					}'></li>
+					<li color-data='{
+					"color":"#3A8953"
+					}'></li>
+					<li color-data='{
+					"color":"#DFAF69"
+					}'></li>
+				</ul>
+				<ul class="colorLists">
+					<li color-data='{
+					"color":"#990000"
+					}'></li>
+					<li color-data='{
+					"color":"#D30F0F"
+					}'></li>
+					<li color-data='{
+					"color":"#FF0000"
+					}'></li>
+					<li color-data='{
+					"color":"#FF6600"
+					}'></li>
+					<li color-data='{
+					"color":"#F89C1B"
+					}'></li>
+					<li color-data='{
+					"color":"#D64700"
+					}'></li>
+					<li color-data='{
+					"color":"#FECE06"
+					}'></li>
+					<li color-data='{
+					"color":"#FFE600"
+					}'></li>
+					<li color-data='{
+					"color":"#F9F7B4"
+					}'></li>
+					<li color-data='{
+					"color":"#CFF291"
+					}'></li>
+					<li color-data='{
+					"color":"#6B722F"
+					}'></li>
+					<li color-data='{
+					"color":"#465D29"
+					}'></li>
+					<li color-data='{
+					"color":"#8CC63E"
+					}'></li>
+					<li color-data='{
+					"color":"#00A14B"
+					}'></li>
+					<li color-data='{
+					"color":"#006633"
+					}'></li>
+					<li color-data='{
+					"color":"#003A05"
+					}'></li>
+					<li color-data='{
+					"color":"#098A61"
+					}'></li>
+					<li color-data='{
+					"color":"#96CFAC"
+					}'></li>
+					<li color-data='{
+					"color":"#05B1C4"
+					}'></li>
+					<li color-data='{
+					"color":"#035E7A"
+					}'></li>
+					<li color-data='{
+					"color":"#62A5BF"
+					}'></li>
+					<li color-data='{
+					"color":"#8BAABB"
+					}'></li>
+					<li color-data='{
+					"color":"#6DB8FC"
+					}'></li>
+					<li color-data='{
+					"color":"#177DC1"
+					}'></li>
+					<li color-data='{
+					"color":"#032AFF"
+					}'></li>
+					<li color-data='{
+					"color":"#224099"
+					}'></li>
+					<li color-data='{
+					"color":"#002E6C"
+					}'></li>
+					<li color-data='{
+					"color":"#24003D"
+					}'></li>
+					<li color-data='{
+					"color":"#5D0C8B"
+					}'></li>
+					<li color-data='{
+					"color":"#7F4099"
+					}'></li>
+					<li color-data='{
+					"color":"#E19BDF"
+					}'></li>
+					<li color-data='{
+					"color":"#FF33FF"
+					}'></li>
+					<li color-data='{
+					"color":"#FF5CA6"
+					}'></li>
+					<li color-data='{
+					"color":"#EA1D75"
+					}'></li>
+					<li color-data='{
+					"color":"#B00060"
+					}'></li>
+					<li color-data='{
+					"color":"#72076F"
+					}'></li>
+
+					<li color-data='{
+					"color":"#24003D"
+					}'></li>
+					<li color-data='{
+					"color":"#000000"
+					}'></li>
+					<li color-data='{
+					"color":"#555555"
+					}'></li>
+					<li color-data='{
+					"color":"#ADADAD"
+					}'></li>
+					<li color-data='{
+					"color":"#DDDDDD"
+					}'></li>
+					<li color-data='{
+					"color":"#FFFFFF"
+					}'></li>
+					<li color-data='{
+					"color":"#DD9E5F"
+					}'></li>
+					<li color-data='{
+					"color":"#A6482B"
+					}'></li>
+					<li color-data='{
+					"color":"#502712"
+					}'></li>
+				</ul>
+				<ul class="styleLists">
+				    <li line-data='{
+					  "lineWidth":1
+					}'></li>
+					<li line-data='{
+					  "lineWidth":2
+					}'></li>
+					<li line-data='{
+					  "lineWidth":5
+					}'></li>
+					<li line-data='{
+					  "lineWidth":8
+					}'></li>
+					<li line-data='{
+					  "lineWidth":10
+					}'></li>
+					<li line-data='{
+					  "lineWidth":15
+					}'></li>
+					<li line-data='{
+					  "lineWidth":20
+					}'></li>
+				</ul>
+			</div>
+			<ul class="boolNav">
+				<li>painting</li>
+				<li>penstyle</li>
+				<li>pencolor</li>
+			</ul>
+		</div>
+		<div id="canvas">
+			<canvas id="canBack" width="1000" height="500"></canvas>
+			<canvas id="can" width="1000" height="500"></canvas>
+		</div>
+	</div>
+	<script type="text/javascript" src="index.js"></script>
+</body>
+</html>

@@ -1,0 +1,241 @@
+@import url(../../Fcss/reset.css);
+
+
+html,body{
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+
+/*设置总体的布局*/
+#container {
+	width: 1200px;
+	height: 650px;
+
+	background: green;
+
+	margin: 10px auto;
+	position: relative;
+}
+
+/*设置导航部分的布局*/
+
+#nav {
+	width: 280px;
+	height: 40px;
+
+	position: absolute;
+	top: 10px;
+	left: 95px;
+
+}
+
+#nav li{
+	box-sizing: border-box;
+	width: 70px;
+	height: 100%;
+	line-height: 40px;
+
+	padding-left: 10px;
+
+	background: #ccc;
+	cursor: pointer;
+	float: left;
+}
+
+/*设置头部的总菜单的位置及样式*/
+
+#menu{
+	width: 70px;
+	height:40px;
+	line-height: 40px;
+	background: #fff;
+	position: absolute;
+
+	left: 25px;
+	top: 10px;
+	text-indent: 16px;
+}
+
+/*设置canvas区域的布局*/
+
+#canvas{
+	width: 1000px;
+	height: 500px;
+	background: red;
+
+	position: absolute;
+	top: 50%;
+	margin-top: -230px;
+	left: 50%;
+	margin-left: -450px;
+}
+
+#canBack{
+	position: absolute;
+	z-index: 5px;
+}
+#can{
+	position: absolute;
+}
+
+
+
+.penSet{
+	box-sizing: border-box;
+	width: 600px;
+	height: 380px;
+	background: #DEDEDD;
+	border: 1px solid #D2D1D1;
+
+	position: absolute;
+	top: 180px;
+	left: 50%;
+	margin-left: -300px;
+	z-index: 5;
+
+	display: none;
+
+}
+
+/*设置关闭按钮*/
+.penSet .closePanel{
+	width: 20px;
+	height: 20px;
+	background: red;
+	position: absolute;
+	right: 10px;
+	top: 10px;
+	cursor: pointer;
+}
+
+/*用来进行各种配置的*/
+
+.penSet .contain{
+	width: 500px;
+	height: 270px;
+	position: absolute;
+	top: 30px;
+	left: 50px;
+
+	overflow: hidden;
+}
+
+.penSet .boolNav{
+	height: 30px;
+	position: absolute;
+	right: 50px;
+	bottom: 15px;
+}
+
+.penSet .boolNav li{
+	width: 50px;
+	height: 30px;
+	background: red;
+
+	float: left;
+	margin-left: 10px;
+	cursor: pointer;
+}
+
+/*设置画布的背景的块*/
+.penSet .contain .boxBgLists{
+	width: 500px;
+	height: 270px;
+	background: #5F383B;
+}
+
+.penSet .contain .boxBgLists li{
+	box-sizing: border-box;
+	width: 90px;
+	height: 90px;
+	float: left;
+	margin-left: 12px;
+	margin-top: 12px;
+	box-shadow: 0 0 2px 0 #2D2F33,0 0 4px 0 #2D2F33;
+}
+
+.penSet .contain .boxBgLists li:hover{
+	border: 1px dashed #ccc;
+}
+
+.penSet .contain .boxBgLists li:nth-of-type(1){
+	background: #fff;
+}
+.penSet .contain .boxBgLists li:nth-of-type(2){
+	background: #DD4944;
+}
+.penSet .contain .boxBgLists li:nth-of-type(3){
+	background: #E98FB6;
+}
+.penSet .contain .boxBgLists li:nth-of-type(4){
+	background: #8BC9E8;
+}
+.penSet .contain .boxBgLists li:nth-of-type(5){
+	background: #3A8953;
+}
+.penSet .contain .boxBgLists li:nth-of-type(6){
+	background: #DFAF69;
+}
+
+/*颜色画板中的颜色列表*/
+.penSet .contain .colorLists{
+	box-sizing: border-box;
+	width: 500px;
+	height: 270px;
+	background: #EEEDED;
+
+	padding-left: 10px;
+
+}
+.penSet .contain .colorLists li{
+	width: 40px;
+	height: 40px;
+	background: black;
+	float: left;
+	margin-left: 12px;
+	margin-top: 12px;
+	border-radius: 20px;
+}
+
+
+/*笔的样式的列表*/
+
+.penSet .contain .styleLists{
+	width: 500px;
+	height: 270px;
+	background: #EDEDED;
+	position: relative;
+
+}
+.penSet .contain .styleLists li{
+	width: 15px;
+	height: 230px;
+	float: left;
+	margin-left: 50px;
+	background: red;
+	font-weight: bolder;
+}
+
+.penSet .contain .styleLists li:nth-of-type(1){
+   background: url(imgs/pen1.png) center center no-repeat;
+}
+.penSet .contain .styleLists li:nth-of-type(2){
+   background: url(imgs/pen2.png) center center no-repeat;
+}
+.penSet .contain .styleLists li:nth-of-type(3){
+   background: url(imgs/pen3.png) center center no-repeat;
+}
+.penSet .contain .styleLists li:nth-of-type(4){
+   background: url(imgs/pen4.png) center center no-repeat;
+}
+.penSet .contain .styleLists li:nth-of-type(5){
+   background: url(imgs/pen5.png) center center no-repeat;
+}
+.penSet .contain .styleLists li:nth-of-type(6){
+   background: url(imgs/pen6.png) center center no-repeat;
+}
+.penSet .contain .styleLists li:nth-of-type(7){
+   background: url(imgs/pen7.png) center center no-repeat;
+}
+
